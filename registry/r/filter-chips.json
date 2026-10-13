@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "filter-chips",
+  "registryDependencies": [
+    "@aamin/button",
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/locale-common"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/FilterChips.vue",
+      "content": "<script setup lang=\"ts\">\nimport { XIcon } from \"@/lib/icons\";\nimport { Button } from \"@/components/ui/button\";\nimport { i18n } from \"@/lib/i18n\";\n\n/**\n * What is filtering a list, and the way out: one primary-tinted chip per\n * active value (a press clears that one) and \"clear all\" after them — so a\n * filtered-empty list is never a mystery. The host builds the chips (it knows\n * its labels) and owns the clearing; the default slot is a leading readout\n * (a result count). Renders nothing when there is nothing to say.\n */\nexport interface FilterChip {\n  id: string;\n  text: string;\n  /** A digit run (a date, a range) shown after the text, in `.num`. */\n  num?: string;\n  clear: () => void;\n}\n\ndefineProps<{ chips: FilterChip[]; clearLabel?: string }>();\nconst emit = defineEmits<{ \"clear-all\": [] }>();\n</script>\n\n<template>\n  <div\n    v-if=\"chips.length || $slots.default\"\n    class=\"flex flex-wrap items-center gap-2 text-xs\"\n    data-testid=\"filter-chips\"\n  >\n    <slot />\n    <button\n      v-for=\"chip in chips\"\n      :key=\"chip.id\"\n      type=\"button\"\n      class=\"inline-flex max-w-full items-center gap-1 rounded-full border border-primary/40 bg-primary/10 px-2 py-0.5 font-medium text-primary hover:bg-primary/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring\"\n      :data-testid=\"`filter-chip-${chip.id}`\"\n      @click=\"chip.clear()\"\n    >\n      <span class=\"truncate\">\n        {{ chip.text }}\n        <span v-if=\"chip.num\" class=\"num\">{{ chip.num }}</span>\n      </span>\n      <XIcon class=\"size-3 shrink-0\" aria-hidden=\"true\" />\n    </button>\n    <Button\n      v-if=\"chips.length\"\n      variant=\"ghost\"\n      size=\"xs\"\n      class=\"text-muted-foreground\"\n      data-testid=\"filters-reset\"\n      @click=\"emit('clear-all')\"\n    >\n      {{ clearLabel ?? i18n.global.t(\"common.clearFilters\") }}\n    </Button>\n  </div>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/FilterChips.vue"
+    }
+  ],
+  "type": "registry:component"
+}

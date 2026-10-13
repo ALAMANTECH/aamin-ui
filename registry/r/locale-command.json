@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-command",
+  "files": [
+    {
+      "path": "src/locales/ar/command.json.txt",
+      "content": "{\n  \"command\": {\n    \"title\": \"لوحة الأوامر\",\n    \"description\": \"ابحث عن أمر…\",\n    \"quickSearch\": \"بحث سريع…\",\n    \"quickSearchAria\": \"بحث سريع\",\n    \"placeholder\": \"ابحث عن صفحة أو أمر…\",\n    \"empty\": \"لا توجد نتائج.\",\n    \"commands\": \"أوامر\",\n    \"toggleTheme\": \"تبديل المظهر\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/command.json"
+    },
+    {
+      "path": "src/locales/en/command.json.txt",
+      "content": "{\n  \"command\": {\n    \"title\": \"Command palette\",\n    \"description\": \"Search for a command…\",\n    \"quickSearch\": \"Quick search…\",\n    \"quickSearchAria\": \"Quick search\",\n    \"placeholder\": \"Search for a page or command…\",\n    \"empty\": \"No results.\",\n    \"commands\": \"Commands\",\n    \"toggleTheme\": \"Toggle theme\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/command.json"
+    }
+  ],
+  "type": "registry:file"
+}

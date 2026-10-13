@@ -1,0 +1,9 @@
+{
+  "topbar": {
+    "toggleSidebar": "Collapse sidebar",
+    "sidebar": "Sidebar",
+    "openMenu": "Open menu",
+    "menu": "Menu",
+    "userMenu": "User menu"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-common",
+  "files": [
+    {
+      "path": "src/locales/ar/common.json.txt",
+      "content": "{\n  \"common\": {\n    \"pickDate\": \"اختر التاريخ\",\n    \"clearDate\": \"مسح التاريخ\",\n    \"pickTime\": \"اختر الساعة\",\n    \"clearTime\": \"مسح الساعة\",\n    \"filters\": \"الفلاتر\",\n    \"more\": \"المزيد\",\n    \"clearFilters\": \"مسح الفلاتر\",\n    \"showResults\": \"عرض النتائج\",\n    \"save\": \"حفظ\",\n    \"cancel\": \"إلغاء\",\n    \"close\": \"إغلاق\",\n    \"confirm\": \"تأكيد\",\n    \"delete\": \"حذف\",\n    \"edit\": \"تعديل\",\n    \"search\": \"بحث\",\n    \"loading\": \"جارٍ التحميل…\",\n    \"retry\": \"إعادة المحاولة\",\n    \"back\": \"رجوع\",\n    \"yes\": \"نعم\",\n    \"no\": \"لا\",\n    \"actions\": \"إجراءات\",\n    \"noData\": \"لا تتوفر بيانات\",\n    \"noResults\": \"لا توجد نتائج.\",\n    \"networkError\": \"تعذّر الاتصال بالخادم — تحقق من الشبكة وحاول مجددًا.\",\n    \"low\": \"ناقص\",\n    \"enabled\": \"مفعّل\",\n    \"disabled\": \"معطّل\",\n    \"clear\": \"مسح\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/common.json"
+    },
+    {
+      "path": "src/locales/en/common.json.txt",
+      "content": "{\n  \"common\": {\n    \"pickDate\": \"Pick a date\",\n    \"clearDate\": \"Clear date\",\n    \"pickTime\": \"Pick a time\",\n    \"clearTime\": \"Clear time\",\n    \"filters\": \"Filters\",\n    \"more\": \"More\",\n    \"clearFilters\": \"Clear filters\",\n    \"showResults\": \"Show results\",\n    \"save\": \"Save\",\n    \"cancel\": \"Cancel\",\n    \"close\": \"Close\",\n    \"confirm\": \"Confirm\",\n    \"delete\": \"Delete\",\n    \"edit\": \"Edit\",\n    \"search\": \"Search\",\n    \"loading\": \"Loading…\",\n    \"retry\": \"Retry\",\n    \"back\": \"Back\",\n    \"yes\": \"Yes\",\n    \"no\": \"No\",\n    \"actions\": \"Actions\",\n    \"noData\": \"No data available\",\n    \"noResults\": \"No results.\",\n    \"networkError\": \"Could not reach the server — check your connection and try again.\",\n    \"low\": \"Low\",\n    \"enabled\": \"Enabled\",\n    \"disabled\": \"Disabled\",\n    \"clear\": \"Clear\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/common.json"
+    }
+  ],
+  "type": "registry:file"
+}

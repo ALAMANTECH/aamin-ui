@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "notFound": "غير موجود",
+    "reference": {
+      "components": "المكوّنات",
+      "overview": "نظرة عامة",
+      "tables": "الجداول",
+      "forms": "النماذج",
+      "profile": "الملف الشخصي",
+      "settings": "الإعدادات",
+      "login": "تسجيل الدخول",
+      "pageAnatomy": "تشريح الصفحة",
+      "templateList": "قالب صفحة القائمة",
+      "templateDetail": "قالب صفحة التفاصيل"
+    },
+    "groups": {
+      "app": "لوحة التحكم",
+      "reference": "المرجع الحي (تطوير فقط)"
+    },
+    "profile": "الملف الشخصي"
+  }
+}

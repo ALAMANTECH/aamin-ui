@@ -1,0 +1,13 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "lib-digits",
+  "files": [
+    {
+      "path": "src/lib/digits.ts",
+      "content": "/**\n * Typed-input digit helpers — what a user typed or pasted (often off a photo,\n * WhatsApp or an Arabic document) made safe to read as a number or a code.\n */\n\n/** Arabic-Indic (U+0660–U+0669) and Extended Arabic-Indic (U+06F0–U+06F9) digits → ASCII. */\nexport function toLatinDigits(input: string): string {\n  return input\n    .replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x0660))\n    .replace(/[۰-۹]/g, (d) => String(d.charCodeAt(0) - 0x06f0));\n}\n\n/**\n * What an agent typed or pasted, ready to read as a number or a code: invisible\n * format marks dropped (text copied from WhatsApp or an Arabic document carries\n * U+200E/U+200F and friends, and `trim()` keeps them), Arabic digits made ASCII,\n * outer spaces trimmed.\n */\nexport function cleanTyped(input: string): string {\n  return toLatinDigits(input.replace(/\\p{Cf}/gu, \"\")).trim();\n}\n",
+      "type": "registry:lib",
+      "target": "~/src/lib/digits.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

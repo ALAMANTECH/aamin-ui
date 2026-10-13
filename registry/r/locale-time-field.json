@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-time-field",
+  "files": [
+    {
+      "path": "src/locales/ar/timeField.json.txt",
+      "content": "{\n  \"timeField\": {\n    \"type\": \"اكتب الوقت\",\n    \"typeHint\": \"أو اكتبه مباشرة، مثل 1837 أو 18:37\",\n    \"typeInvalid\": \"وقت غير صحيح. اكتب الساعة من 00 إلى 23 ثم الدقائق\",\n    \"hour\": \"الساعة\",\n    \"minute\": \"الدقيقة\",\n    \"periods\": {\n      \"night\": \"ليلاً\",\n      \"morning\": \"صباحاً\",\n      \"afternoon\": \"ظهراً\",\n      \"evening\": \"مساءً\"\n    }\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/timeField.json"
+    },
+    {
+      "path": "src/locales/en/timeField.json.txt",
+      "content": "{\n  \"timeField\": {\n    \"type\": \"Type the time\",\n    \"typeHint\": \"Or type it, e.g. 1837 or 18:37\",\n    \"typeInvalid\": \"Not a valid time. Hours 00 to 23, then minutes\",\n    \"hour\": \"Hour\",\n    \"minute\": \"Minute\",\n    \"periods\": {\n      \"night\": \"Night\",\n      \"morning\": \"Morning\",\n      \"afternoon\": \"Afternoon\",\n      \"evening\": \"Evening\"\n    }\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/timeField.json"
+    }
+  ],
+  "type": "registry:file"
+}

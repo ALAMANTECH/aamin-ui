@@ -1,0 +1,21 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "use-locale",
+  "dependencies": [
+    "@vueuse/core@^14.4.0",
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-i18n",
+    "@aamin/use-dir"
+  ],
+  "files": [
+    {
+      "path": "src/composables/useLocale.ts",
+      "content": "import { watchEffect } from \"vue\";\nimport { useStorage } from \"@vueuse/core\";\nimport { i18n, LOCALES } from \"@/lib/i18n\";\nimport { useDir } from \"./useDir\";\n\nconst locale = useStorage<string>(\"aamin-ui-locale\", LOCALES[0]!.code);\nconst { dir } = useDir();\n\n// Locale OWNS direction. One module-scope effect keeps i18n, useDir and\n// <html lang> in sync for every consumer — never toggle direction alone.\nwatchEffect(() => {\n  const option = LOCALES.find((l) => l.code === locale.value) ?? LOCALES[0]!;\n  // A stale persisted code (removed/renamed language) falls back to the\n  // default; write it back so `locale` never reports an unsupported code.\n  if (option.code !== locale.value) locale.value = option.code;\n  i18n.global.locale.value = option.code;\n  dir.value = option.dir;\n  document.documentElement.lang = option.code;\n});\n\nfunction set(code: string) {\n  if (LOCALES.some((l) => l.code === code)) locale.value = code;\n}\n\nfunction toggle() {\n  const i = LOCALES.findIndex((l) => l.code === locale.value);\n  locale.value = LOCALES[(i + 1) % LOCALES.length]!.code;\n}\n\n/** UI language, persisted; switching it also switches direction. */\nexport function useLocale() {\n  return { locale, locales: LOCALES, set, toggle };\n}\n",
+      "type": "registry:composable",
+      "target": "~/src/composables/useLocale.ts"
+    }
+  ],
+  "type": "registry:composable"
+}

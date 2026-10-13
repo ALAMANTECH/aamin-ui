@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-breadcrumb",
+  "files": [
+    {
+      "path": "src/locales/ar/breadcrumb.json.txt",
+      "content": "{\n  \"breadcrumb\": {\n    \"label\": \"مسار التنقل\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/breadcrumb.json"
+    },
+    {
+      "path": "src/locales/en/breadcrumb.json.txt",
+      "content": "{\n  \"breadcrumb\": {\n    \"label\": \"Breadcrumb\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/breadcrumb.json"
+    }
+  ],
+  "type": "registry:file"
+}

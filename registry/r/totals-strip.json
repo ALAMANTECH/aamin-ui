@@ -1,0 +1,20 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "totals-strip",
+  "registryDependencies": [
+    "@aamin/badge",
+    "@aamin/lib-i18n",
+    "@aamin/lib-utils",
+    "@aamin/locale-totals-strip",
+    "@aamin/stat-card"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/TotalsStrip.vue",
+      "content": "<script setup lang=\"ts\">\nimport { Badge } from \"@/components/ui/badge\";\nimport StatCard from \"@/components/app/StatCard.vue\";\nimport { i18n } from \"@/lib/i18n\";\nimport { cn } from \"@/lib/utils\";\n\n/**\n * The totals strip above a list: one row per currency present in the WHOLE\n * filtered set (server totals — every filter applied, all pages, never just\n * the page on screen). Each row is a small heading (the currency + the scope\n * note) over one StatCard per figure, so the number is the big thing on the\n * tile and the stored decimals sit in its tooltip. Money never adds across\n * currencies, so a mixed list shows several rows. Renders nothing for an empty\n * `totals` (the table says so). `dimmed` greys the strip while the list\n * refetches, without hiding the last figures.\n */\nexport interface TotalsGroup {\n  /** Already-localized currency name or code, shown as the row's badge and each tile's unit. */\n  currency: string;\n  items: { label: string; value: number }[];\n}\n\ndefineProps<{ totals: TotalsGroup[]; dimmed?: boolean }>();\n\nconst t = i18n.global.t;\n\n/** StatCard parses strings through money.ts; exponent notation would not parse. */\nfunction asString(value: number): string {\n  return String(value).includes(\"e\") ? value.toFixed(5) : String(value);\n}\n\n/** Literal class strings (Tailwind reads them from the source): tiles across, by how many there are. */\nconst COLUMNS: Record<number, string> = {\n  1: \"sm:grid-cols-1\",\n  2: \"sm:grid-cols-2\",\n  3: \"sm:grid-cols-3\",\n  4: \"sm:grid-cols-2 xl:grid-cols-4\",\n  5: \"sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5\",\n  6: \"sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6\",\n};\n</script>\n\n<template>\n  <div\n    v-if=\"totals.length\"\n    :class=\"cn('space-y-4 transition-opacity', dimmed && 'opacity-60')\"\n    :data-dimmed=\"dimmed || undefined\"\n  >\n    <section v-for=\"group in totals\" :key=\"group.currency\" class=\"space-y-2\">\n      <h3 class=\"flex flex-wrap items-center gap-2 text-sm font-semibold\">\n        <Badge variant=\"outline\">{{ group.currency }}</Badge>\n        <span class=\"ms-auto text-xs font-normal text-muted-foreground\">\n          {{ t(\"totalsStrip.scope\") }}\n        </span>\n      </h3>\n      <div\n        class=\"grid gap-3\"\n        :class=\"COLUMNS[group.items.length] ?? 'sm:grid-cols-2 xl:grid-cols-4'\"\n      >\n        <StatCard\n          v-for=\"item in group.items\"\n          :key=\"item.label\"\n          :label=\"item.label\"\n          :value=\"asString(item.value)\"\n          :unit=\"group.currency\"\n        />\n      </div>\n    </section>\n  </div>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/TotalsStrip.vue"
+    }
+  ],
+  "type": "registry:component"
+}

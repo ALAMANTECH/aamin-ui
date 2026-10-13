@@ -1,0 +1,6 @@
+{
+  "submitBar": {
+    "busy": "Submitting…",
+    "leaveWhileBusy": "The operation is still running — leaving now may cancel it without telling you whether it went through. Leave anyway?"
+  }
+}

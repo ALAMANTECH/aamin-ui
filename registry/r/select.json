@@ -1,0 +1,77 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "select",
+  "dependencies": [
+    "@vueuse/core@^14.4.0",
+    "reka-ui@^2.10.3",
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/select/Select.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { SelectRootEmits, SelectRootProps } from \"reka-ui\"\nimport { SelectRoot, useForwardPropsEmits } from \"reka-ui\"\nimport { i18n } from \"@/lib/i18n\"\n\nconst props = defineProps<SelectRootProps>()\nconst emits = defineEmits<SelectRootEmits>()\n\nconst forwarded = useForwardPropsEmits(props, emits)\n</script>\n\n<template>\n  <!-- Kit: keyed on the locale. reka's SelectItemText copies the selected\n       item's text into the trigger once on mount, so a language switch would\n       leave the old label behind; remounting re-reads it. Labels that change\n       for any other reason still need a caller-side :key. -->\n  <SelectRoot\n    :key=\"i18n.global.locale.value\"\n    v-slot=\"slotProps\"\n    data-slot=\"select\"\n    v-bind=\"forwarded\"\n  >\n    <slot v-bind=\"slotProps\" />\n  </SelectRoot>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/SelectContent.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { SelectContentEmits, SelectContentProps } from \"reka-ui\";\nimport type { HTMLAttributes } from \"vue\";\nimport { reactiveOmit } from \"@vueuse/core\";\nimport { SelectContent, SelectPortal, SelectViewport, useForwardPropsEmits } from \"reka-ui\";\nimport { cn } from \"@/lib/utils\";\nimport { SelectScrollDownButton, SelectScrollUpButton } from \".\";\n\ndefineOptions({\n  inheritAttrs: false,\n});\n\nconst props = withDefaults(\n  defineProps<SelectContentProps & { class?: HTMLAttributes[\"class\"] }>(),\n  {\n    // Popper anchors under the trigger (dashboard default). Item-aligned\n    // matches native <select> and looks like the menu opens on the click.\n    position: \"popper\",\n    align: \"start\",\n    sideOffset: 4,\n  },\n);\nconst emits = defineEmits<SelectContentEmits>();\n\nconst delegatedProps = reactiveOmit(props, \"class\");\n\nconst forwarded = useForwardPropsEmits(delegatedProps, emits);\n</script>\n\n<template>\n  <SelectPortal>\n    <SelectContent\n      data-slot=\"select-content\"\n      :data-align-trigger=\"position === 'item-aligned'\"\n      v-bind=\"{ ...$attrs, ...forwarded }\"\n      :class=\"\n        cn(\n          // The same sheet as the dropdown menu: a padded panel whose rows keep\n          // their rounded corners off the edge, a hairline ring and a real shadow.\n          'bg-popover text-popover-foreground data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 ring-foreground/10 min-w-36 rounded-xl p-1 shadow-lg ring-1 duration-100 data-[side=inline-start]:slide-in-from-right-2 data-[side=inline-end]:slide-in-from-left-2 relative z-50 max-h-(--reka-select-content-available-height) origin-(--reka-select-content-transform-origin) overflow-x-hidden overflow-y-auto data-[align-trigger=true]:animate-none',\n          props.class,\n        )\n      \"\n    >\n      <SelectScrollUpButton />\n      <SelectViewport\n        :data-position=\"position\"\n        :class=\"cn('w-full min-w-[calc(var(--reka-select-trigger-width)-0.5rem)]')\"\n      >\n        <slot />\n      </SelectViewport>\n      <SelectScrollDownButton />\n    </SelectContent>\n  </SelectPortal>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/SelectGroup.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { SelectGroupProps } from \"reka-ui\"\nimport type { HTMLAttributes } from \"vue\"\nimport { reactiveOmit } from \"@vueuse/core\"\nimport { SelectGroup } from \"reka-ui\"\nimport { cn } from \"@/lib/utils\"\n\nconst props = defineProps<SelectGroupProps & { class?: HTMLAttributes[\"class\"] }>()\n\nconst delegatedProps = reactiveOmit(props, \"class\")\n</script>\n\n<template>\n  <SelectGroup\n    data-slot=\"select-group\"\n    v-bind=\"delegatedProps\"\n    :class=\"cn('scroll-my-1 p-1', props.class)\"\n  >\n    <slot />\n  </SelectGroup>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/SelectItem.vue",
+      "content": "<script setup lang=\"ts\">\nimport { CheckIcon } from \"@/lib/icons\";\n\nimport type { SelectItemProps } from \"reka-ui\";\nimport type { HTMLAttributes } from \"vue\";\nimport { reactiveOmit } from \"@vueuse/core\";\nimport { SelectItem, SelectItemIndicator, SelectItemText, useForwardProps } from \"reka-ui\";\nimport { cn } from \"@/lib/utils\";\n\nconst props = defineProps<SelectItemProps & { class?: HTMLAttributes[\"class\"] }>();\n\nconst delegatedProps = reactiveOmit(props, \"class\");\n\nconst forwardedProps = useForwardProps(delegatedProps);\n</script>\n\n<template>\n  <SelectItem\n    data-slot=\"select-item\"\n    v-bind=\"forwardedProps\"\n    :class=\"\n      cn(\n        // The dropdown menu's row: a primary bar on the start edge while\n        // focused, the check on the end edge marking what is chosen (in the\n        // primary, the row in medium weight), room to press on every side.\n        'focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-[state=checked]:font-medium gap-2 rounded-md py-1.5 pe-8 ps-2.5 text-sm [&_svg:not([class*=size-])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 relative flex w-full cursor-default items-center outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 before:absolute before:start-1 before:inset-y-1.5 before:w-0.5 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity focus:before:opacity-100',\n        props.class,\n      )\n    \"\n  >\n    <span\n      class=\"pointer-events-none absolute end-2 flex size-4 items-center justify-center text-primary\"\n    >\n      <SelectItemIndicator>\n        <slot name=\"indicator-icon\">\n          <CheckIcon class=\"pointer-events-none\" stroke-width=\"2.5\" />\n        </slot>\n      </SelectItemIndicator>\n    </span>\n\n    <SelectItemText>\n      <slot />\n    </SelectItemText>\n  </SelectItem>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/SelectItemText.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { SelectItemTextProps } from \"reka-ui\"\nimport { SelectItemText } from \"reka-ui\"\n\nconst props = defineProps<SelectItemTextProps>()\n</script>\n\n<template>\n  <SelectItemText\n    data-slot=\"select-item-text\"\n    v-bind=\"props\"\n  >\n    <slot />\n  </SelectItemText>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/SelectLabel.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { SelectLabelProps } from \"reka-ui\";\nimport type { HTMLAttributes } from \"vue\";\nimport { SelectLabel } from \"reka-ui\";\nimport { cn } from \"@/lib/utils\";\n\nconst props = defineProps<SelectLabelProps & { class?: HTMLAttributes[\"class\"] }>();\n</script>\n\n<template>\n  <SelectLabel\n    data-slot=\"select-label\"\n    :class=\"cn('text-muted-foreground px-2.5 py-1.5 text-[11px] font-medium', props.class)\"\n  >\n    <slot />\n  </SelectLabel>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/SelectScrollDownButton.vue",
+      "content": "<script setup lang=\"ts\">\nimport { ChevronDownIcon } from \"@/lib/icons\";\n\nimport type { SelectScrollDownButtonProps } from \"reka-ui\"\nimport type { HTMLAttributes } from \"vue\"\nimport { reactiveOmit } from \"@vueuse/core\"\nimport { SelectScrollDownButton, useForwardProps } from \"reka-ui\"\nimport { cn } from \"@/lib/utils\"\n\nconst props = defineProps<SelectScrollDownButtonProps & { class?: HTMLAttributes[\"class\"] }>()\n\nconst delegatedProps = reactiveOmit(props, \"class\")\n\nconst forwardedProps = useForwardProps(delegatedProps)\n</script>\n\n<template>\n  <SelectScrollDownButton\n    data-slot=\"select-scroll-down-button\"\n    v-bind=\"forwardedProps\"\n    :class=\"cn('bg-popover z-10 flex cursor-default items-center justify-center py-1 [&_svg:not([class*=size-])]:size-4', props.class)\"\n  >\n    <slot>\n      <ChevronDownIcon />\n    </slot>\n  </SelectScrollDownButton>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/SelectScrollUpButton.vue",
+      "content": "<script setup lang=\"ts\">\nimport { ChevronUpIcon } from \"@/lib/icons\";\n\nimport type { SelectScrollUpButtonProps } from \"reka-ui\"\nimport type { HTMLAttributes } from \"vue\"\nimport { reactiveOmit } from \"@vueuse/core\"\nimport { SelectScrollUpButton, useForwardProps } from \"reka-ui\"\nimport { cn } from \"@/lib/utils\"\n\nconst props = defineProps<SelectScrollUpButtonProps & { class?: HTMLAttributes[\"class\"] }>()\n\nconst delegatedProps = reactiveOmit(props, \"class\")\n\nconst forwardedProps = useForwardProps(delegatedProps)\n</script>\n\n<template>\n  <SelectScrollUpButton\n    data-slot=\"select-scroll-up-button\"\n    v-bind=\"forwardedProps\"\n    :class=\"cn('bg-popover z-10 flex cursor-default items-center justify-center py-1 [&_svg:not([class*=size-])]:size-4', props.class)\"\n  >\n    <slot>\n      <ChevronUpIcon />\n    </slot>\n  </SelectScrollUpButton>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/SelectSeparator.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { SelectSeparatorProps } from \"reka-ui\"\nimport type { HTMLAttributes } from \"vue\"\nimport { reactiveOmit } from \"@vueuse/core\"\nimport { SelectSeparator } from \"reka-ui\"\nimport { cn } from \"@/lib/utils\"\n\nconst props = defineProps<SelectSeparatorProps & { class?: HTMLAttributes[\"class\"] }>()\n\nconst delegatedProps = reactiveOmit(props, \"class\")\n</script>\n\n<template>\n  <SelectSeparator\n    data-slot=\"select-separator\"\n    v-bind=\"delegatedProps\"\n    :class=\"cn('bg-border -mx-1 my-1 h-px pointer-events-none', props.class)\"\n  />\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/SelectTrigger.vue",
+      "content": "<script setup lang=\"ts\">\nimport { ChevronDownIcon } from \"@/lib/icons\";\n\nimport type { SelectTriggerProps } from \"reka-ui\";\nimport type { HTMLAttributes } from \"vue\";\nimport { reactiveOmit } from \"@vueuse/core\";\nimport { SelectIcon, SelectTrigger, useForwardProps } from \"reka-ui\";\nimport { cn } from \"@/lib/utils\";\n\nconst props = withDefaults(\n  defineProps<SelectTriggerProps & { class?: HTMLAttributes[\"class\"]; size?: \"sm\" | \"default\" }>(),\n  { size: \"default\" },\n);\n\nconst delegatedProps = reactiveOmit(props, \"class\", \"size\");\nconst forwardedProps = useForwardProps(delegatedProps);\n</script>\n\n<template>\n  <SelectTrigger\n    data-slot=\"select-trigger\"\n    :data-size=\"size\"\n    v-bind=\"forwardedProps\"\n    :class=\"\n      cn(\n        // Reads like an Input at rest (same border, fill, height) and like a\n        // pressed control while open: the ring stays on and the chevron turns.\n        'border-input data-placeholder:text-muted-foreground dark:bg-input/30 hover:border-ring/60 dark:hover:bg-input/50 focus-visible:border-ring focus-visible:ring-ring/50 data-[state=open]:border-ring data-[state=open]:ring-3 data-[state=open]:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 gap-2 rounded-lg border bg-transparent py-2 pe-2 ps-2.5 text-sm transition-[color,background-color,border-color,box-shadow] select-none focus-visible:ring-3 aria-invalid:ring-3 data-[size=default]:h-8 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] *:data-[slot=select-value]:gap-1.5 [&_svg:not([class*=size-])]:size-4 flex w-fit items-center justify-between whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center [&_svg]:pointer-events-none [&_svg]:shrink-0 [&>svg]:transition-transform [&>svg]:duration-200 [&[data-state=open]>svg]:rotate-180 motion-reduce:[&>svg]:transition-none',\n        props.class,\n      )\n    \"\n  >\n    <slot />\n    <SelectIcon as-child>\n      <ChevronDownIcon class=\"text-muted-foreground size-4 pointer-events-none\" />\n    </SelectIcon>\n  </SelectTrigger>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/SelectValue.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { SelectValueProps } from \"reka-ui\"\nimport { SelectValue } from \"reka-ui\"\n\nconst props = defineProps<SelectValueProps>()\n</script>\n\n<template>\n  <SelectValue\n    data-slot=\"select-value\"\n    v-bind=\"props\"\n  >\n    <slot />\n  </SelectValue>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/select/index.ts",
+      "content": "export { default as Select } from \"./Select.vue\"\nexport { default as SelectContent } from \"./SelectContent.vue\"\nexport { default as SelectGroup } from \"./SelectGroup.vue\"\nexport { default as SelectItem } from \"./SelectItem.vue\"\nexport { default as SelectItemText } from \"./SelectItemText.vue\"\nexport { default as SelectLabel } from \"./SelectLabel.vue\"\nexport { default as SelectScrollDownButton } from \"./SelectScrollDownButton.vue\"\nexport { default as SelectScrollUpButton } from \"./SelectScrollUpButton.vue\"\nexport { default as SelectSeparator } from \"./SelectSeparator.vue\"\nexport { default as SelectTrigger } from \"./SelectTrigger.vue\"\nexport { default as SelectValue } from \"./SelectValue.vue\"\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

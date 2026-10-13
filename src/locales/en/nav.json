@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Home",
+    "notFound": "Not found",
+    "reference": {
+      "components": "Components",
+      "overview": "Overview",
+      "tables": "Tables",
+      "forms": "Forms",
+      "profile": "Profile",
+      "settings": "Settings",
+      "login": "Sign in",
+      "pageAnatomy": "Page anatomy",
+      "templateList": "List page template",
+      "templateDetail": "Detail page template"
+    },
+    "groups": {
+      "app": "Dashboard",
+      "reference": "Live reference (dev only)"
+    },
+    "profile": "Profile"
+  }
+}

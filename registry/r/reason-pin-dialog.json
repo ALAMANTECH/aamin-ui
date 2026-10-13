@@ -1,0 +1,26 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "reason-pin-dialog",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/alert-dialog",
+    "@aamin/button",
+    "@aamin/label",
+    "@aamin/lib-i18n",
+    "@aamin/locale-common",
+    "@aamin/locale-reason-pin",
+    "@aamin/pin-confirm",
+    "@aamin/textarea"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/ReasonPinDialog.vue",
+      "content": "<script setup lang=\"ts\">\nimport { computed, ref, useId, watch } from \"vue\";\nimport {\n  AlertDialog,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n} from \"@/components/ui/alert-dialog\";\nimport { Button } from \"@/components/ui/button\";\nimport { Label } from \"@/components/ui/label\";\nimport { Textarea } from \"@/components/ui/textarea\";\nimport PinConfirm from \"@/components/app/PinConfirm.vue\";\nimport { i18n } from \"@/lib/i18n\";\n\n/**\n * An irreversible action that the backend takes as `{ reason, pin }` — voiding\n * a payment, reversing an allocation. The question and its reason come first\n * (an AlertDialog); Continue opens the PinConfirm step ON TOP of it, so closing\n * one reka dialog and opening the next in the same click never leaves the page\n * unclickable. Both close together on success.\n *\n * `onConfirm(reason, pin)` posts; a refusal (wrong PIN, the server's 422) must\n * be thrown — PinConfirm shows it in place and keeps the reason. The\n * description slot carries rich text (amounts, document numbers).\n */\nconst props = withDefaults(\n  defineProps<{\n    title: string;\n    description?: string;\n    reasonLabel: string;\n    reasonPlaceholder?: string;\n    continueLabel: string;\n    pinTitle: string;\n    pinDescription?: string;\n    confirmLabel: string;\n    onConfirm: (reason: string, pin: string) => Promise<void>;\n    /** Prefix of the data-testids: `{testId}-dialog`, `-reason`, `-continue`. */\n    testId?: string;\n  }>(),\n  { description: \"\", reasonPlaceholder: \"\", pinDescription: \"\", testId: \"reason-pin\" },\n);\n\nconst open = defineModel<boolean>(\"open\", { default: false });\nconst emit = defineEmits<{ success: [reason: string] }>();\n\nconst t = i18n.global.t;\nconst id = useId();\n\n/** The backend's `reason` ceiling. */\nconst REASON_MAX = 255;\n\nconst reason = ref(\"\");\nconst attempted = ref(false);\nconst pinOpen = ref(false);\n\nconst missing = computed(() => !reason.value.trim());\n\nwatch(open, (isOpen) => {\n  if (isOpen) {\n    reason.value = \"\";\n    attempted.value = false;\n  } else {\n    pinOpen.value = false;\n  }\n});\n\nfunction onContinue() {\n  attempted.value = true;\n  if (missing.value) return;\n  pinOpen.value = true;\n}\n\nasync function confirm(pin: string): Promise<void> {\n  await props.onConfirm(reason.value.trim(), pin);\n}\n\nfunction onConfirmed() {\n  const given = reason.value.trim();\n  pinOpen.value = false;\n  open.value = false;\n  emit(\"success\", given);\n}\n</script>\n\n<template>\n  <AlertDialog v-model:open=\"open\">\n    <AlertDialogContent class=\"sm:max-w-lg\" :data-testid=\"`${testId}-dialog`\">\n      <AlertDialogHeader>\n        <AlertDialogTitle>{{ title }}</AlertDialogTitle>\n        <AlertDialogDescription>\n          <slot name=\"description\">{{ description }}</slot>\n        </AlertDialogDescription>\n      </AlertDialogHeader>\n\n      <div class=\"space-y-1.5\">\n        <Label :for=\"`${id}-reason`\">{{ reasonLabel }}</Label>\n        <Textarea\n          :id=\"`${id}-reason`\"\n          v-model=\"reason\"\n          rows=\"2\"\n          :maxlength=\"REASON_MAX\"\n          :placeholder=\"reasonPlaceholder\"\n          :aria-invalid=\"(attempted && missing) || undefined\"\n          :aria-describedby=\"attempted && missing ? `${id}-reason-error` : undefined\"\n          :data-testid=\"`${testId}-reason`\"\n        />\n        <p v-if=\"attempted && missing\" :id=\"`${id}-reason-error`\" class=\"text-xs text-destructive\">\n          {{ t(\"reasonPin.reasonRequired\") }}\n        </p>\n      </div>\n\n      <AlertDialogFooter>\n        <AlertDialogCancel>{{ t(\"common.cancel\") }}</AlertDialogCancel>\n        <Button variant=\"destructive\" :data-testid=\"`${testId}-continue`\" @click=\"onContinue\">\n          {{ continueLabel }}\n        </Button>\n      </AlertDialogFooter>\n    </AlertDialogContent>\n  </AlertDialog>\n\n  <PinConfirm\n    v-model:open=\"pinOpen\"\n    :title=\"pinTitle\"\n    :description=\"pinDescription\"\n    :length=\"4\"\n    masked\n    :resendable=\"false\"\n    :confirm-label=\"confirmLabel\"\n    :on-confirm=\"confirm\"\n    @success=\"onConfirmed\"\n  />\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/ReasonPinDialog.vue"
+    }
+  ],
+  "type": "registry:component"
+}

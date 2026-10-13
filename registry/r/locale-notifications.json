@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-notifications",
+  "files": [
+    {
+      "path": "src/locales/ar/notifications.json.txt",
+      "content": "{\n  \"notifications\": {\n    \"bellLabel\": \"الإشعارات\",\n    \"title\": \"الإشعارات\",\n    \"markAll\": \"تعليم الكل كمقروء\",\n    \"tabUnread\": \"غير المقروء\",\n    \"tabAll\": \"الكل\",\n    \"empty\": \"لا إشعارات جديدة\",\n    \"emptyHint\": \"ستظهر هنا التنبيهات الجديدة فور وصولها.\",\n    \"loadError\": \"تعذّر تحميل الإشعارات\",\n    \"readFailed\": \"تعذّر تعليم الإشعار كمقروء\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/notifications.json"
+    },
+    {
+      "path": "src/locales/en/notifications.json.txt",
+      "content": "{\n  \"notifications\": {\n    \"bellLabel\": \"Notifications\",\n    \"title\": \"Notifications\",\n    \"markAll\": \"Mark all read\",\n    \"tabUnread\": \"Unread\",\n    \"tabAll\": \"All\",\n    \"empty\": \"No new notifications\",\n    \"emptyHint\": \"New alerts show up here as soon as they arrive.\",\n    \"loadError\": \"Could not load notifications\",\n    \"readFailed\": \"Could not mark the notification read\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/notifications.json"
+    }
+  ],
+  "type": "registry:file"
+}

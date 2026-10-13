@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-datatable",
+  "files": [
+    {
+      "path": "src/locales/ar/datatable.json.txt",
+      "content": "{\n  \"datatable\": {\n    \"columns\": \"الأعمدة\",\n    \"columnsHiddenAria\": \"الأعمدة — {count} مخفية\",\n    \"empty\": \"لا توجد بيانات\",\n    \"firstPage\": \"الصفحة الأولى\",\n    \"lastPage\": \"الصفحة الأخيرة\",\n    \"nextPage\": \"الصفحة التالية\",\n    \"pageReadoutAria\": \"الصفحة {page} من {count} — اضغط للانتقال إلى صفحة أخرى\",\n    \"pageReadoutHint\": \"اضغط لكتابة رقم صفحة\",\n    \"prevPage\": \"الصفحة السابقة\",\n    \"rangeOf\": \"من\",\n    \"rangeShowing\": \"عرض\",\n    \"rowNumber\": \"#\",\n    \"rowNumberAria\": \"رقم الصف\",\n    \"rowsPerPage\": \"عدد الصفوف\",\n    \"rowsPerPageAria\": \"عدد الصفوف في الصفحة\",\n    \"select\": \"تحديد\",\n    \"selectAll\": \"تحديد الكل\",\n    \"selectAllRows\": \"تحديد كل الصفوف\",\n    \"selectPage\": \"تحديد الصفحة الحالية\",\n    \"selectRow\": \"تحديد الصف\",\n    \"selectedRow\": \"صف محدد\",\n    \"selectedRows\": \"صفوف محددة\",\n    \"showAllColumns\": \"إظهار كل الأعمدة\",\n    \"showCards\": \"عرض كبطاقات\",\n    \"showColumns\": \"إظهار الأعمدة\",\n    \"showTable\": \"عرض كجدول\",\n    \"sortBy\": \"ترتيب\",\n    \"sortByAria\": \"ترتيب القائمة\",\n    \"sortByColumn\": \"ترتيب حسب {label}\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/datatable.json"
+    },
+    {
+      "path": "src/locales/en/datatable.json.txt",
+      "content": "{\n  \"datatable\": {\n    \"columns\": \"Columns\",\n    \"columnsHiddenAria\": \"Columns — {count} hidden\",\n    \"empty\": \"No data\",\n    \"firstPage\": \"First page\",\n    \"lastPage\": \"Last page\",\n    \"nextPage\": \"Next page\",\n    \"pageReadoutAria\": \"Page {page} of {count} — press to jump to another page\",\n    \"pageReadoutHint\": \"Press to type a page number\",\n    \"prevPage\": \"Previous page\",\n    \"rangeOf\": \"of\",\n    \"rangeShowing\": \"Showing\",\n    \"rowNumber\": \"#\",\n    \"rowNumberAria\": \"Row number\",\n    \"rowsPerPage\": \"Rows\",\n    \"rowsPerPageAria\": \"Rows per page\",\n    \"select\": \"Select\",\n    \"selectAll\": \"Select all\",\n    \"selectAllRows\": \"Select all rows\",\n    \"selectPage\": \"Select this page\",\n    \"selectRow\": \"Select row\",\n    \"selectedRow\": \"row selected\",\n    \"selectedRows\": \"rows selected\",\n    \"showAllColumns\": \"Show all columns\",\n    \"showCards\": \"Show as cards\",\n    \"showColumns\": \"Show columns\",\n    \"showTable\": \"Show as table\",\n    \"sortBy\": \"Sort\",\n    \"sortByAria\": \"Sort the list\",\n    \"sortByColumn\": \"Sort by {label}\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/datatable.json"
+    }
+  ],
+  "type": "registry:file"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-shell",
+  "files": [
+    {
+      "path": "src/locales/ar/shell.json.txt",
+      "content": "{\n  \"shell\": {\n    \"user\": {\n      \"name\": \"مستخدم تجريبي\",\n      \"email\": \"user@example.com\",\n      \"role\": \"مدير النظام\",\n      \"initials\": \"م‌ت\"\n    }\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/shell.json"
+    },
+    {
+      "path": "src/locales/en/shell.json.txt",
+      "content": "{\n  \"shell\": {\n    \"user\": {\n      \"name\": \"Demo User\",\n      \"email\": \"user@example.com\",\n      \"role\": \"System admin\",\n      \"initials\": \"DU\"\n    }\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/shell.json"
+    }
+  ],
+  "type": "registry:file"
+}

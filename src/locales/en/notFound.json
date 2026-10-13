@@ -1,0 +1,7 @@
+{
+  "notFound": {
+    "title": "Page not found",
+    "description": "The link you opened is invalid or the page has moved. Check the address or return home.",
+    "backHome": "Back to home"
+  }
+}

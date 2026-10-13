@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-number-field",
+  "files": [
+    {
+      "path": "src/locales/ar/numberField.json.txt",
+      "content": "{\n  \"numberField\": {\n    \"decrement\": \"إنقاص القيمة\",\n    \"increment\": \"زيادة القيمة\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/numberField.json"
+    },
+    {
+      "path": "src/locales/en/numberField.json.txt",
+      "content": "{\n  \"numberField\": {\n    \"decrement\": \"Decrease value\",\n    \"increment\": \"Increase value\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/numberField.json"
+    }
+  ],
+  "type": "registry:file"
+}

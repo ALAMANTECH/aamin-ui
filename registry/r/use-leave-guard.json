@@ -1,0 +1,22 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "use-leave-guard",
+  "dependencies": [
+    "@vueuse/core@^14.4.0",
+    "vue@^3.5.40",
+    "vue-router@^4.6.4"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-i18n",
+    "@aamin/locale-submit-bar"
+  ],
+  "files": [
+    {
+      "path": "src/composables/useLeaveGuard.ts",
+      "content": "import { inject, type Ref } from \"vue\";\nimport { matchedRouteKey, onBeforeRouteLeave } from \"vue-router\";\nimport { useEventListener } from \"@vueuse/core\";\nimport { i18n } from \"@/lib/i18n\";\n\n/**\n * Leaving mid-request aborts it with no answer — the operator cannot tell\n * whether the batch / upload / payment landed. While `busy` is true this\n * confirms in-app navigation (route components only — elsewhere there is no\n * route record to guard) and blocks a tab close / reload. `message` overrides\n * the default confirm text; it is read lazily so it follows the locale.\n * Pair with `StickySubmitBar`.\n */\nexport function useLeaveGuard(busy: Ref<boolean>, message?: () => string): void {\n  // onBeforeRouteLeave warns outside a <RouterView> subtree — only register\n  // it where there is a matched route to leave.\n  if (inject(matchedRouteKey, null)) {\n    onBeforeRouteLeave(() => {\n      if (!busy.value) return true;\n      return window.confirm(message ? message() : i18n.global.t(\"submitBar.leaveWhileBusy\"));\n    });\n  }\n  useEventListener(window, \"beforeunload\", (event) => {\n    if (busy.value) event.preventDefault();\n  });\n}\n",
+      "type": "registry:composable",
+      "target": "~/src/composables/useLeaveGuard.ts"
+    }
+  ],
+  "type": "registry:composable"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "chart-state",
+  "registryDependencies": [
+    "@aamin/empty-state",
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/locale-chart",
+    "@aamin/skeleton"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/ChartState.vue",
+      "content": "<script setup lang=\"ts\">\nimport { ChartNoAxesCombinedIcon } from \"@/lib/icons\";\nimport { Skeleton } from \"@/components/ui/skeleton\";\nimport EmptyState from \"@/components/app/EmptyState.vue\";\nimport { i18n } from \"@/lib/i18n\";\n\n/**\n * Per-chart async gate: a skeleton while the FIRST load is in flight, an\n * inline error with retry when that chart's request failed (the rest of the\n * page stays up), the \"no data in this range\" panel when the series is\n * legitimately empty, the chart (default slot) otherwise. Silent refreshes\n * should never pass `loading`, so stale data stays on screen.\n */\nwithDefaults(\n  defineProps<{\n    loading: boolean;\n    /** The failure message (\"\" while healthy). */\n    error: string;\n    empty: boolean;\n    /** Overrides the default error / empty titles. */\n    errorTitle?: string;\n    emptyTitle?: string;\n  }>(),\n  { errorTitle: undefined, emptyTitle: undefined },\n);\n\nconst emit = defineEmits<{ retry: [] }>();\n\nconst t = i18n.global.t;\n</script>\n\n<template>\n  <Skeleton v-if=\"loading\" class=\"h-[220px] w-full rounded-lg\" />\n  <EmptyState\n    v-else-if=\"error\"\n    state=\"error\"\n    bare\n    :title=\"errorTitle ?? t('chart.error')\"\n    :error-message=\"error\"\n    @retry=\"emit('retry')\"\n  />\n  <EmptyState\n    v-else-if=\"empty\"\n    bare\n    :icon=\"ChartNoAxesCombinedIcon\"\n    :title=\"emptyTitle ?? t('chart.noData')\"\n  />\n  <slot v-else />\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/ChartState.vue"
+    }
+  ],
+  "type": "registry:component"
+}

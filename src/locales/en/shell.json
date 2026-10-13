@@ -1,0 +1,10 @@
+{
+  "shell": {
+    "user": {
+      "name": "Demo User",
+      "email": "user@example.com",
+      "role": "System admin",
+      "initials": "DU"
+    }
+  }
+}

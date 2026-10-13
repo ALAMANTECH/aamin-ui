@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "timeline",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-icons"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/Timeline.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { Component } from \"vue\";\nimport { ArrowRightIcon } from \"@/lib/icons\";\n\nexport interface TimelineItem {\n  text: string;\n  time: string;\n  icon?: Component;\n  tone?: \"default\" | \"primary\";\n  /** Renders as `from` (struck through) → `to` (foreground) below `text`. */\n  diff?: { field: string; from: string; to: string };\n}\n\nconst props = defineProps<{\n  items: TimelineItem[];\n}>();\n\nfunction resolveTone(item: TimelineItem, index: number): \"default\" | \"primary\" {\n  return item.tone ?? (index === 0 ? \"primary\" : \"default\");\n}\n\nconst markerClasses = {\n  primary: \"bg-primary/10 text-primary ring-primary/15\",\n  default: \"bg-muted text-muted-foreground ring-border/70\",\n} as const;\n\nfunction markerClass(item: TimelineItem, index: number): string {\n  return markerClasses[resolveTone(item, index)];\n}\n</script>\n\n<template>\n  <ol>\n    <li\n      v-for=\"(item, index) in props.items\"\n      :key=\"index\"\n      class=\"group relative flex gap-3 pb-5 last:pb-0\"\n    >\n      <!-- Connector: marker bottom → row end (bridges pb-5 into the next marker) -->\n      <span\n        class=\"absolute start-[13.5px] top-7 bottom-0 w-px bg-border group-last:hidden\"\n        aria-hidden=\"true\"\n      />\n      <span\n        class=\"grid size-7 shrink-0 place-items-center rounded-full ring-4\"\n        :class=\"markerClass(item, index)\"\n        aria-hidden=\"true\"\n      >\n        <component :is=\"item.icon\" v-if=\"item.icon\" class=\"size-3.5\" />\n        <span v-else class=\"size-2 rounded-full bg-current\" />\n      </span>\n\n      <div class=\"min-w-0 flex-1 pt-0.5\">\n        <slot name=\"item\" :item=\"item\" :index=\"index\">\n          <p class=\"text-sm leading-6\">{{ item.text }}</p>\n          <p\n            v-if=\"item.diff\"\n            class=\"mt-1.5 flex w-fit flex-wrap items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-2 py-1 text-xs\"\n          >\n            <span class=\"font-medium text-muted-foreground\">{{ item.diff.field }}:</span>\n            <span class=\"text-muted-foreground line-through\">{{ item.diff.from }}</span>\n            <ArrowRightIcon\n              class=\"size-3 shrink-0 text-muted-foreground cn-rtl-flip\"\n              aria-hidden=\"true\"\n            />\n            <span class=\"font-medium text-foreground\">{{ item.diff.to }}</span>\n          </p>\n          <p class=\"mt-1 w-fit text-[11px] text-muted-foreground\">\n            <span class=\"num\">{{ item.time }}</span>\n          </p>\n        </slot>\n      </div>\n    </li>\n  </ol>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/Timeline.vue"
+    }
+  ],
+  "type": "registry:component"
+}

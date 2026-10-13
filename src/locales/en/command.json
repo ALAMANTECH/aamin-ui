@@ -1,0 +1,12 @@
+{
+  "command": {
+    "title": "Command palette",
+    "description": "Search for a command…",
+    "quickSearch": "Quick search…",
+    "quickSearchAria": "Quick search",
+    "placeholder": "Search for a page or command…",
+    "empty": "No results.",
+    "commands": "Commands",
+    "toggleTheme": "Toggle theme"
+  }
+}

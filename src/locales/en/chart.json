@@ -1,0 +1,6 @@
+{
+  "chart": {
+    "noData": "No data in this range",
+    "error": "Could not load the chart"
+  }
+}

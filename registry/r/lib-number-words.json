@@ -1,0 +1,25 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "lib-number-words",
+  "dependencies": [
+    "written-number@^0.11.1"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-money"
+  ],
+  "files": [
+    {
+      "path": "src/lib/number-words.ts",
+      "content": "import writtenNumber from \"written-number\";\nimport { parseApiNumber } from \"@/lib/money\";\n\n// Truncating, ungrouped, never-exponent digits — the same `roundingMode`\n// widening money.ts uses (the TS lib predates the ES2023 option).\ntype TruncatingFormatOptions = Intl.NumberFormatOptions & { roundingMode: \"trunc\" };\n\nfunction plainDigits(value: number, decimals: number): string {\n  const options: TruncatingFormatOptions = {\n    useGrouping: false,\n    minimumFractionDigits: 0,\n    maximumFractionDigits: decimals,\n    roundingMode: \"trunc\",\n  };\n  return new Intl.NumberFormat(\"en-US\", options).format(value);\n}\n\n/**\n * An amount spelled out in Arabic words (\"القيمة بالحروف\") — for copy texts,\n * receipts and cheques. Ported from the production Aamin dashboard,\n * on the same `written-number` package, so the wording stays the one\n * providers have always read.\n *\n * Input contract: a number, or a raw API string — plain (\"2000.00000\") or\n * grouped (\"311,843.61092\") — parsed through {@link parseApiNumber}. Non-negative\n * only: a negative, non-numeric or non-finite value returns \"\" (written-number\n * cannot spell negatives, and a silent wrong figure is worse than none).\n *\n * Its quirks are kept on purpose:\n * - the fraction is cut to `decimals` digits, never rounded (12.999 → \"99\")\n *   — and a short one is padded (33.7 → \"70\");\n * - a whole amount gets no fraction clause at all — including one whose\n *   fraction is zero after parsing (\"2000.00000\" → \"ألفان دينار\");\n * - the subunit may be a placeholder (\"-\") for currencies that have none in\n *   the provider's vocabulary.\n */\nexport function amountInArabicWords(\n  value: number | string,\n  currency: string,\n  subunit: string,\n  decimals = 2,\n): string {\n  const n = parseApiNumber(value);\n  if (n == null || n < 0) return \"\";\n\n  // Math.abs folds -0 into 0 so it formats as \"0\", not \"-0\".\n  const [integerPart = \"0\", fractionPart] = plainDigits(Math.abs(n), decimals).split(\".\");\n  let words = `${writtenNumber(parseInt(integerPart, 10) || 0, { lang: \"ar\" })} ${currency}`;\n\n  if (fractionPart) {\n    const fraction = parseInt(fractionPart.padEnd(decimals, \"0\").slice(0, decimals), 10);\n    words += ` و ${writtenNumber(fraction, { lang: \"ar\" })} ${subunit}`;\n  }\n\n  return words;\n}\n",
+      "type": "registry:lib",
+      "target": "~/src/lib/number-words.ts"
+    },
+    {
+      "path": "src/types/written-number.d.ts",
+      "content": "// `written-number` (behind amountInArabicWords in src/lib/number-words.ts)\n// ships no types.\ndeclare module \"written-number\" {\n  export default function writtenNumber(\n    value: number,\n    options?: { lang?: string; noAnd?: boolean },\n  ): string;\n}\n",
+      "type": "registry:lib",
+      "target": "~/src/types/written-number.d.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

@@ -1,0 +1,80 @@
+{
+  "templates": {
+    "unit": {
+      "LYD": "د.ل",
+      "USD": "دولار"
+    },
+    "sample": {
+      "names": {
+        "atlas": "تجارة تجريبية أ",
+        "cedar": "توريدات تجريبية ب",
+        "harbor": "خدمات لوجستية تجريبية ج",
+        "meridian": "أغذية تجريبية د",
+        "summit": "إلكترونيات تجريبية هـ",
+        "oasis": "صيدلية تجريبية و"
+      }
+    },
+    "list": {
+      "title": "الحسابات",
+      "description": "قالب صفحة قائمة — بيانات تجريبية محايدة",
+      "new": "حساب جديد",
+      "searchPlaceholder": "ابحث بالاسم أو الرمز…",
+      "filters": {
+        "status": "الحالة",
+        "currency": "العملة",
+        "all": "الكل"
+      },
+      "columns": {
+        "name": "الاسم",
+        "code": "الرمز",
+        "currency": "العملة",
+        "balance": "الرصيد",
+        "outstanding": "المستحق",
+        "updated": "آخر تحديث",
+        "status": "الحالة"
+      }
+    },
+    "states": {
+      "loadFailed": "تعذّر تحميل البيانات",
+      "loadFailedHint": "تحقق من الاتصال ثم أعد المحاولة.",
+      "empty": "لا توجد حسابات بعد",
+      "emptyHint": "أنشئ أول حساب ليظهر هنا.",
+      "emptyFiltered": "لا نتائج مطابقة",
+      "emptyFilteredHint": "غيّر البحث أو امسح عوامل التصفية."
+    },
+    "detail": {
+      "title": "الحساب",
+      "fields": {
+        "opened": "فُتح في"
+      },
+      "actions": {
+        "primary": "تسجيل دفعة",
+        "statement": "كشف الحساب",
+        "transfer": "تحويل"
+      },
+      "stats": {
+        "advance": "الدفعة المقدمة",
+        "advanceHint": "غير مخصصة لأي فاتورة",
+        "payments": "الدفعات",
+        "inCredit": "دائن"
+      },
+      "tabs": {
+        "overview": "نظرة عامة",
+        "activity": "النشاط",
+        "documents": "المستندات"
+      },
+      "sections": {
+        "identity": "الهوية",
+        "balances": "الأرصدة",
+        "available": "المتاح",
+        "availableHint": "الرصيد بعد خصم المستحق"
+      },
+      "activity": {
+        "payment": "دفعة مسجلة",
+        "invoice": "فاتورة جديدة"
+      },
+      "documentsEmpty": "لا توجد مستندات",
+      "documentsEmptyHint": "المستندات المرفقة بالحساب تظهر هنا."
+    }
+  }
+}

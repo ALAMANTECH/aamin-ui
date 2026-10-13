@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "setting-row",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/status-switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/SettingRow.vue",
+      "content": "<script setup lang=\"ts\">\nimport { computed } from \"vue\";\nimport type { Component } from \"vue\";\nimport StatusSwitch from \"@/components/app/StatusSwitch.vue\";\n\n/**\n * One setting switch explained: a tinted icon tile (the state's tone), what\n * the switch controls, one line on what turning it off does, and the\n * StatusSwitch with its OWN state words. Where a record has more than one\n * switch the rows sit together and the words never repeat — that is what\n * tells them apart.\n *\n * Controlled: it emits the requested value and shows `modelValue` until the\n * host has confirmed (see AsyncConfirmDialog) and stored the change.\n */\nconst props = withDefaults(\n  defineProps<{\n    modelValue: boolean;\n    icon: Component;\n    title: string;\n    /** What turning it off does, in one line. */\n    hint: string;\n    onLabel: string;\n    offLabel: string;\n    /** Tone of the off state: `warning` for a partial stop, `destructive` for a hard block. */\n    offTone?: \"warning\" | \"destructive\";\n    /** Accessible name for the switch (\"Selling — Palm Grocery\"). */\n    switchLabel: string;\n    pending?: boolean;\n    /** An extra warning-toned line — e.g. why this switch has no effect right now. */\n    note?: string;\n    /**\n     * Greys the tile and the state out while another switch overrides this one.\n     * Still operable.\n     */\n    dimmed?: boolean;\n  }>(),\n  { offTone: \"warning\", pending: false, note: undefined, dimmed: false },\n);\n\nconst emit = defineEmits<{ \"update:modelValue\": [value: boolean] }>();\n\nconst tile = computed(() => {\n  if (props.dimmed) return \"bg-muted text-muted-foreground\";\n  if (props.modelValue) return \"bg-success/15 text-success\";\n  return props.offTone === \"destructive\"\n    ? \"bg-destructive/10 text-destructive\"\n    : \"bg-warning/15 text-warning\";\n});\n</script>\n\n<template>\n  <div class=\"flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border bg-card p-4\">\n    <div\n      class=\"grid size-10 shrink-0 place-items-center rounded-lg transition-colors\"\n      :class=\"tile\"\n    >\n      <component :is=\"icon\" class=\"size-5\" aria-hidden=\"true\" />\n    </div>\n    <div class=\"min-w-0 flex-1 basis-40 space-y-0.5\">\n      <p class=\"text-sm font-medium\">{{ title }}</p>\n      <p class=\"text-xs text-muted-foreground\">{{ hint }}</p>\n      <p v-if=\"note\" class=\"text-xs text-warning\" data-testid=\"setting-row-note\">{{ note }}</p>\n    </div>\n    <StatusSwitch\n      class=\"ms-auto\"\n      :class=\"dimmed ? 'opacity-60 grayscale' : undefined\"\n      :data-dimmed=\"dimmed || undefined\"\n      :model-value=\"modelValue\"\n      :pending=\"pending\"\n      :label=\"switchLabel\"\n      :enabled-label=\"onLabel\"\n      :disabled-label=\"offLabel\"\n      :disabled-variant=\"offTone\"\n      @update:model-value=\"(v) => emit('update:modelValue', v)\"\n    />\n  </div>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/SettingRow.vue"
+    }
+  ],
+  "type": "registry:component"
+}

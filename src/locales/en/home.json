@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Home",
+    "description": "The starting point — replace this page with your app's first real screen",
+    "emptyTitle": "Start building your app",
+    "emptyHint": "Read AGENTS.md and docs/new-project.md first. Every kit component is ready — copy the patterns from the reference pages instead of building from scratch.",
+    "reference": "Live reference (dev only)"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-theme",
+  "files": [
+    {
+      "path": "src/locales/ar/theme.json.txt",
+      "content": "{\n  \"theme\": {\n    \"toggle\": \"تبديل المظهر\",\n    \"light\": \"الوضع الفاتح\",\n    \"dark\": \"الوضع الداكن\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/theme.json"
+    },
+    {
+      "path": "src/locales/en/theme.json.txt",
+      "content": "{\n  \"theme\": {\n    \"toggle\": \"Toggle theme\",\n    \"light\": \"Light mode\",\n    \"dark\": \"Dark mode\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/theme.json"
+    }
+  ],
+  "type": "registry:file"
+}

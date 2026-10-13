@@ -1,0 +1,26 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "date-field",
+  "dependencies": [
+    "@internationalized/date@^3.12.2",
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/button",
+    "@aamin/calendar",
+    "@aamin/lib-datetime",
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/locale-common",
+    "@aamin/popover"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/DateField.vue",
+      "content": "<script setup lang=\"ts\">\nimport { computed, ref } from \"vue\";\nimport { parseDate, type DateValue } from \"@internationalized/date\";\nimport { CalendarIcon, XIcon } from \"@/lib/icons\";\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { Popover, PopoverContent, PopoverTrigger } from \"@/components/ui/popover\";\nimport { formatDateYmd } from \"@/lib/datetime\";\nimport { i18n } from \"@/lib/i18n\";\n\n/**\n * THE single-date control: the kit Calendar (Libya config) in a popover behind\n * a button that reads like an input — never a native `type=\"date\"`, whose\n * browser chrome (\"mm/dd/yyyy\") is not our UI. The model stays the\n * `YYYY-MM-DD` string the API takes (\"\" = no date); `min` / `max` are the same\n * strings, so a from/to pair bounds each other and \"not in the future\" is\n * `:max=\"todayYmd()\"`. A pick closes the popover.\n *\n * `class` and `data-testid` land on the root; `id` (for a Label), `invalid`\n * and `aria-label` go to the button. `clearable` is for filters — a form's\n * required date has nothing to clear to. `tinted` marks a set value with the\n * filter bars' primary tint.\n */\nconst model = defineModel<string>({ default: \"\" });\n\nconst props = withDefaults(\n  defineProps<{\n    id?: string;\n    min?: string;\n    max?: string;\n    placeholder?: string;\n    ariaLabel?: string;\n    size?: \"sm\" | \"default\";\n    invalid?: boolean;\n    disabled?: boolean;\n    clearable?: boolean;\n    tinted?: boolean;\n  }>(),\n  { size: \"default\" },\n);\n\nconst open = ref(false);\n\nfunction toDateValue(value: string | undefined): DateValue | undefined {\n  if (!value) return undefined;\n  try {\n    return parseDate(value);\n  } catch {\n    return undefined;\n  }\n}\n\nconst value = computed(() => toDateValue(model.value));\nconst label = computed(\n  () => props.ariaLabel ?? props.placeholder ?? i18n.global.t(\"common.pickDate\"),\n);\n\nfunction pick(next: DateValue | undefined) {\n  model.value = next ? next.toString() : \"\";\n  open.value = false;\n}\n</script>\n\n<template>\n  <div class=\"relative\">\n    <Popover v-model:open=\"open\">\n      <PopoverTrigger as-child>\n        <Button\n          :id=\"id\"\n          type=\"button\"\n          variant=\"outline\"\n          :size=\"size\"\n          :disabled=\"disabled\"\n          :aria-label=\"label\"\n          :aria-invalid=\"invalid || undefined\"\n          :class=\"[\n            'w-full justify-start gap-2 font-normal',\n            clearable && model && 'pe-8',\n            tinted && model && 'border-primary/50 bg-primary/10 text-primary hover:bg-primary/15',\n          ]\"\n        >\n          <CalendarIcon\n            class=\"size-3.5 shrink-0\"\n            :class=\"!model && 'text-muted-foreground'\"\n            aria-hidden=\"true\"\n          />\n          <span v-if=\"model\" class=\"num truncate\">{{ formatDateYmd(model) }}</span>\n          <span v-else class=\"truncate text-muted-foreground\">{{\n            placeholder ?? i18n.global.t(\"common.pickDate\")\n          }}</span>\n        </Button>\n      </PopoverTrigger>\n      <PopoverContent class=\"w-auto p-0\" align=\"start\">\n        <Calendar\n          :model-value=\"value\"\n          locale=\"ar-LY-u-nu-latn\"\n          :week-starts-on=\"6\"\n          layout=\"month-and-year\"\n          :min-value=\"toDateValue(min)\"\n          :max-value=\"toDateValue(max)\"\n          :calendar-label=\"label\"\n          @update:model-value=\"(v) => pick(v as DateValue | undefined)\"\n        />\n      </PopoverContent>\n    </Popover>\n    <button\n      v-if=\"clearable && model && !disabled\"\n      type=\"button\"\n      class=\"absolute end-1.5 top-1/2 grid size-5 -translate-y-1/2 place-items-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring\"\n      :aria-label=\"i18n.global.t('common.clearDate')\"\n      @click=\"model = ''\"\n    >\n      <XIcon class=\"size-3\" aria-hidden=\"true\" />\n    </button>\n  </div>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/DateField.vue"
+    }
+  ],
+  "type": "registry:component"
+}

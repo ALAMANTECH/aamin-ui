@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-not-found",
+  "files": [
+    {
+      "path": "src/locales/ar/notFound.json.txt",
+      "content": "{\n  \"notFound\": {\n    \"title\": \"الصفحة غير موجودة\",\n    \"description\": \"الرابط الذي فتحته غير صحيح أو أن الصفحة قد نُقلت. تحقّق من العنوان أو عُد إلى الرئيسية.\",\n    \"backHome\": \"العودة إلى الرئيسية\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/notFound.json"
+    },
+    {
+      "path": "src/locales/en/notFound.json.txt",
+      "content": "{\n  \"notFound\": {\n    \"title\": \"Page not found\",\n    \"description\": \"The link you opened is invalid or the page has moved. Check the address or return home.\",\n    \"backHome\": \"Back to home\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/notFound.json"
+    }
+  ],
+  "type": "registry:file"
+}

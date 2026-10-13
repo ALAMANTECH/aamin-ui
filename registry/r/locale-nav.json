@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-nav",
+  "files": [
+    {
+      "path": "src/locales/ar/nav.json.txt",
+      "content": "{\n  \"nav\": {\n    \"home\": \"الرئيسية\",\n    \"notFound\": \"غير موجود\",\n    \"reference\": {\n      \"components\": \"المكوّنات\",\n      \"overview\": \"نظرة عامة\",\n      \"tables\": \"الجداول\",\n      \"forms\": \"النماذج\",\n      \"profile\": \"الملف الشخصي\",\n      \"settings\": \"الإعدادات\",\n      \"login\": \"تسجيل الدخول\",\n      \"pageAnatomy\": \"تشريح الصفحة\",\n      \"templateList\": \"قالب صفحة القائمة\",\n      \"templateDetail\": \"قالب صفحة التفاصيل\"\n    },\n    \"groups\": {\n      \"app\": \"لوحة التحكم\",\n      \"reference\": \"المرجع الحي (تطوير فقط)\"\n    },\n    \"profile\": \"الملف الشخصي\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/nav.json"
+    },
+    {
+      "path": "src/locales/en/nav.json.txt",
+      "content": "{\n  \"nav\": {\n    \"home\": \"Home\",\n    \"notFound\": \"Not found\",\n    \"reference\": {\n      \"components\": \"Components\",\n      \"overview\": \"Overview\",\n      \"tables\": \"Tables\",\n      \"forms\": \"Forms\",\n      \"profile\": \"Profile\",\n      \"settings\": \"Settings\",\n      \"login\": \"Sign in\",\n      \"pageAnatomy\": \"Page anatomy\",\n      \"templateList\": \"List page template\",\n      \"templateDetail\": \"Detail page template\"\n    },\n    \"groups\": {\n      \"app\": \"Dashboard\",\n      \"reference\": \"Live reference (dev only)\"\n    },\n    \"profile\": \"Profile\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/nav.json"
+    }
+  ],
+  "type": "registry:file"
+}

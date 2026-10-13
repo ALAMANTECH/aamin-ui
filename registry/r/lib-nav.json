@@ -1,0 +1,20 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "lib-nav",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-icons",
+    "@aamin/locale-nav"
+  ],
+  "files": [
+    {
+      "path": "src/lib/nav.ts",
+      "content": "import type { Component } from \"vue\";\nimport {\n  ClipboardListIcon,\n  FileTextIcon,\n  KeyRoundIcon,\n  LayoutDashboardIcon,\n  LayoutListIcon,\n  RulerIcon,\n  SettingsIcon,\n  ShapesIcon,\n  Table2Icon,\n  UserRoundIcon,\n} from \"@/lib/icons\";\nimport { appGroups } from \"./nav.app\";\n\n// KIT-OWNED: registry updates overwrite this file. The product's own sidebar\n// groups live in ./nav.app.ts (project-owned).\n\n/** `title`/`label` are i18n keys — render them with `t(item.title)`. */\nexport interface NavItem {\n  /** i18n key, e.g. \"nav.home\". One key per destination (shared with route titles). */\n  title: string;\n  to: string;\n  icon: Component;\n  badge?: string;\n}\n\nexport interface NavGroup {\n  /** i18n key, e.g. \"nav.groups.app\". */\n  label: string;\n  items: NavItem[];\n}\n\n/**\n * The living reference (dev-only): the kit's demo/recipe pages under\n * src/pages/reference/. `import.meta.env.DEV` is statically replaced, so\n * production builds drop this group entirely — it never ships.\n * NOTE: the badge below is test-enforced to equal the number of\n * src/components/ui/* families (see rtl-conventions.spec.ts).\n */\nconst referenceGroup: NavGroup = {\n  label: \"nav.groups.reference\",\n  items: [\n    {\n      title: \"nav.reference.components\",\n      to: \"/reference/components\",\n      icon: ShapesIcon,\n      badge: \"43\",\n    },\n    { title: \"nav.reference.pageAnatomy\", to: \"/reference/page-anatomy\", icon: RulerIcon },\n    {\n      title: \"nav.reference.templateList\",\n      to: \"/reference/templates/list\",\n      icon: LayoutListIcon,\n    },\n    {\n      title: \"nav.reference.templateDetail\",\n      to: \"/reference/templates/detail\",\n      icon: FileTextIcon,\n    },\n    { title: \"nav.reference.overview\", to: \"/reference/overview\", icon: LayoutDashboardIcon },\n    { title: \"nav.reference.tables\", to: \"/reference/tables\", icon: Table2Icon },\n    { title: \"nav.reference.forms\", to: \"/reference/forms\", icon: ClipboardListIcon },\n    { title: \"nav.reference.profile\", to: \"/reference/profile\", icon: UserRoundIcon },\n    { title: \"nav.reference.settings\", to: \"/reference/settings\", icon: SettingsIcon },\n    { title: \"nav.reference.login\", to: \"/reference/login\", icon: KeyRoundIcon },\n  ],\n};\n\n// The reference pages ship with the optional `@aamin/reference` registry item;\n// their links only show when its routes file is present (same glob as router.ts).\nexport const hasReference =\n  Object.keys(import.meta.glob(\"../pages/reference/routes.ts\")).length > 0;\n\n/** Single source of truth for the sidebar and the command palette. */\nexport const navGroups: NavGroup[] = [\n  ...appGroups,\n  ...(import.meta.env.DEV && hasReference ? [referenceGroup] : []),\n];\n",
+      "type": "registry:lib",
+      "target": "~/src/lib/nav.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

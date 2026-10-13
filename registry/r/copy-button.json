@@ -1,0 +1,23 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "copy-button",
+  "dependencies": [
+    "vue@^3.5.40",
+    "vue-sonner@^2.0.9"
+  ],
+  "registryDependencies": [
+    "@aamin/button",
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/locale-copy"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/CopyButton.vue",
+      "content": "<script setup lang=\"ts\">\nimport { computed, ref } from \"vue\";\nimport { CheckIcon, CopyIcon } from \"@/lib/icons\";\nimport { toast } from \"vue-sonner\";\nimport { Button } from \"@/components/ui/button\";\nimport type { ButtonVariants } from \"@/components/ui/button\";\nimport { i18n } from \"@/lib/i18n\";\n\n// i18n.global.t (not useI18n) — unit-mounted without the i18n plugin.\nconst t = i18n.global.t;\n\nconst props = withDefaults(\n  defineProps<{\n    /** The text copied to the clipboard. */\n    value: string;\n    /** Accessible label for the icon-only button. */\n    label?: string;\n    /** Show a success toast after copying — `true` for a default message, or a custom string. */\n    withToast?: boolean | string;\n    size?: ButtonVariants[\"size\"];\n  }>(),\n  {\n    withToast: false,\n    size: \"icon-sm\",\n  },\n);\n\nconst labelText = computed(() => props.label ?? t(\"copy.label\"));\n\nconst copied = ref(false);\nlet resetTimer: ReturnType<typeof setTimeout> | undefined;\n\nasync function copy() {\n  if (!navigator.clipboard) {\n    toast.error(t(\"copy.failed\"));\n    return;\n  }\n  try {\n    await navigator.clipboard.writeText(props.value);\n    copied.value = true;\n    if (props.withToast) {\n      toast.success(\n        typeof props.withToast === \"string\"\n          ? props.withToast\n          : t(\"copy.copied\", { value: props.value }),\n      );\n    }\n    clearTimeout(resetTimer);\n    resetTimer = setTimeout(() => {\n      copied.value = false;\n    }, 1500);\n  } catch {\n    // Clipboard permission denied/unavailable — nothing to recover client-side,\n    // but the operator must know the paste they are about to make is empty.\n    toast.error(t(\"copy.failed\"));\n  }\n}\n</script>\n\n<template>\n  <Button type=\"button\" variant=\"ghost\" :size=\"size\" :aria-label=\"labelText\" @click=\"copy\">\n    <CheckIcon v-if=\"copied\" class=\"size-3.5 text-success\" aria-hidden=\"true\" />\n    <CopyIcon v-else class=\"size-3.5\" aria-hidden=\"true\" />\n  </Button>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/CopyButton.vue"
+    }
+  ],
+  "type": "registry:component"
+}

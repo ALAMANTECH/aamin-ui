@@ -1,0 +1,12 @@
+{
+  "dropzone": {
+    "ariaLabel": "Drop files or browse",
+    "dropHere": "Drag and drop files here",
+    "browseHint": "or click to browse from your device",
+    "dropOrBrowse": "Drop a file here or browse",
+    "remove": "Remove",
+    "replace": "Click or drop another image to replace",
+    "typeNotAllowed": "File type not allowed",
+    "sizeTooLarge": "File is larger than the limit"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-attachments",
+  "files": [
+    {
+      "path": "src/locales/ar/attachments.json.txt",
+      "content": "{\n  \"attachments\": {\n    \"prev\": \"المرفق السابق\",\n    \"next\": \"المرفق التالي\",\n    \"openInTab\": \"فتح في تبويب جديد\",\n    \"noPreview\": \"لا توجد معاينة لهذا النوع من الملفات — افتحه في تبويب جديد\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/attachments.json"
+    },
+    {
+      "path": "src/locales/en/attachments.json.txt",
+      "content": "{\n  \"attachments\": {\n    \"prev\": \"Previous attachment\",\n    \"next\": \"Next attachment\",\n    \"openInTab\": \"Open in a new tab\",\n    \"noPreview\": \"No preview for this file type — open it in a new tab\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/attachments.json"
+    }
+  ],
+  "type": "registry:file"
+}

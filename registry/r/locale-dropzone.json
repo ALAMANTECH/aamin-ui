@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-dropzone",
+  "files": [
+    {
+      "path": "src/locales/ar/dropzone.json.txt",
+      "content": "{\n  \"dropzone\": {\n    \"ariaLabel\": \"إسقاط الملفات أو تصفّح\",\n    \"dropHere\": \"اسحب الملفات وأفلتها هنا\",\n    \"browseHint\": \"أو انقر للتصفّح من جهازك\",\n    \"dropOrBrowse\": \"اسحب الملف هنا أو تصفّح\",\n    \"remove\": \"إزالة\",\n    \"replace\": \"انقر أو أسقط صورة أخرى للاستبدال\",\n    \"typeNotAllowed\": \"النوع غير مسموح\",\n    \"sizeTooLarge\": \"الحجم أكبر من الحد\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/dropzone.json"
+    },
+    {
+      "path": "src/locales/en/dropzone.json.txt",
+      "content": "{\n  \"dropzone\": {\n    \"ariaLabel\": \"Drop files or browse\",\n    \"dropHere\": \"Drag and drop files here\",\n    \"browseHint\": \"or click to browse from your device\",\n    \"dropOrBrowse\": \"Drop a file here or browse\",\n    \"remove\": \"Remove\",\n    \"replace\": \"Click or drop another image to replace\",\n    \"typeNotAllowed\": \"File type not allowed\",\n    \"sizeTooLarge\": \"File is larger than the limit\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/dropzone.json"
+    }
+  ],
+  "type": "registry:file"
+}

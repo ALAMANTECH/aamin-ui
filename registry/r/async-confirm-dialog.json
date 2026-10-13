@@ -1,0 +1,23 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "async-confirm-dialog",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/alert-dialog",
+    "@aamin/button",
+    "@aamin/lib-i18n",
+    "@aamin/locale-common",
+    "@aamin/spinner"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/AsyncConfirmDialog.vue",
+      "content": "<script setup lang=\"ts\">\nimport { ref, watch } from \"vue\";\nimport {\n  AlertDialog,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n} from \"@/components/ui/alert-dialog\";\nimport { Button } from \"@/components/ui/button\";\nimport { Spinner } from \"@/components/ui/spinner\";\nimport { i18n } from \"@/lib/i18n\";\n\n/**\n * The confirm step of a state-changing action (a SettingRow switch, a row-menu\n * item). Unlike a bare AlertDialogAction — which closes before its handler\n * runs — it stays open while `onConfirm` is in flight, so the request is never\n * left running behind a closed dialog, and a refusal is shown inside it\n * instead of vanishing with it. Closes and emits `success` once `onConfirm`\n * resolves. `errorMessage` turns a thrown value into the inline text; the\n * default reads an Error's message, else the generic network failure.\n */\nconst props = withDefaults(\n  defineProps<{\n    open: boolean;\n    title: string;\n    description?: string;\n    /** Confirm button label; defaults to the generic \"Confirm\". */\n    confirmLabel?: string;\n    destructive?: boolean;\n    onConfirm: () => Promise<unknown>;\n    errorMessage?: (error: unknown) => string;\n  }>(),\n  { description: \"\", confirmLabel: undefined, destructive: false, errorMessage: undefined },\n);\n\nconst emit = defineEmits<{ \"update:open\": [value: boolean]; success: [] }>();\n\nconst t = i18n.global.t;\nconst busy = ref(false);\nconst error = ref(\"\");\n\nwatch(\n  () => props.open,\n  (open) => {\n    if (open) error.value = \"\";\n  },\n);\n\n/** Never throws and never returns empty: a refusal always says something. */\nfunction messageFor(err: unknown): string {\n  let message = \"\";\n  try {\n    message = props.errorMessage\n      ? props.errorMessage(err)\n      : err instanceof Error\n        ? err.message\n        : t(\"common.networkError\");\n  } catch {\n    // A consumer mapper that chokes on an unexpected error shape (e.g. reads\n    // `e.response.data` off a network error) must not leave the dialog stuck.\n  }\n  return message || t(\"common.networkError\");\n}\n\nfunction onOpenChange(value: boolean) {\n  // Escape / overlay / cancel cannot close it under a running request.\n  if (!value && busy.value) return;\n  emit(\"update:open\", value);\n}\n\nasync function confirm() {\n  busy.value = true;\n  error.value = \"\";\n  try {\n    await props.onConfirm();\n    busy.value = false;\n    emit(\"update:open\", false);\n    emit(\"success\");\n  } catch (err) {\n    error.value = messageFor(err);\n  } finally {\n    busy.value = false;\n  }\n}\n</script>\n\n<template>\n  <AlertDialog :open=\"open\" @update:open=\"onOpenChange\">\n    <AlertDialogContent>\n      <AlertDialogHeader>\n        <AlertDialogTitle>{{ title }}</AlertDialogTitle>\n        <AlertDialogDescription v-if=\"description\">{{ description }}</AlertDialogDescription>\n      </AlertDialogHeader>\n      <p\n        v-if=\"error\"\n        class=\"text-sm text-destructive\"\n        role=\"alert\"\n        data-testid=\"async-confirm-error\"\n      >\n        {{ error }}\n      </p>\n      <AlertDialogFooter>\n        <AlertDialogCancel :disabled=\"busy\">{{ t(\"common.cancel\") }}</AlertDialogCancel>\n        <Button\n          :variant=\"destructive ? 'destructive' : 'default'\"\n          :disabled=\"busy\"\n          data-test=\"confirm\"\n          @click=\"confirm\"\n        >\n          <Spinner v-if=\"busy\" size=\"sm\" />\n          {{ confirmLabel ?? t(\"common.confirm\") }}\n        </Button>\n      </AlertDialogFooter>\n    </AlertDialogContent>\n  </AlertDialog>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/AsyncConfirmDialog.vue"
+    }
+  ],
+  "type": "registry:component"
+}

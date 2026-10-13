@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-language",
+  "files": [
+    {
+      "path": "src/locales/ar/language.json.txt",
+      "content": "{\n  \"language\": {\n    \"toggle\": \"تبديل اللغة\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/language.json"
+    },
+    {
+      "path": "src/locales/en/language.json.txt",
+      "content": "{\n  \"language\": {\n    \"toggle\": \"Switch language\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/language.json"
+    }
+  ],
+  "type": "registry:file"
+}

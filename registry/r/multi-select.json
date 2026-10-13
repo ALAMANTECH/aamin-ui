@@ -1,0 +1,24 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "multi-select",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/button",
+    "@aamin/combobox",
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/lib-utils",
+    "@aamin/locale-common"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/MultiSelect.vue",
+      "content": "<script setup lang=\"ts\">\nimport { computed, ref } from \"vue\";\nimport { CheckIcon, ChevronsUpDownIcon, XIcon } from \"@/lib/icons\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Combobox,\n  ComboboxAnchor,\n  ComboboxEmpty,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxItemIndicator,\n  ComboboxList,\n  ComboboxTrigger,\n  ComboboxViewport,\n} from \"@/components/ui/combobox\";\nimport { i18n } from \"@/lib/i18n\";\nimport { cn, normalizeArabic } from \"@/lib/utils\";\n\nexport type MultiSelectOption = {\n  value: string;\n  label: string;\n};\n\n/**\n * Multi-value sibling of SearchableSelect: same Combobox kit, but the reka\n * root runs with `multiple` so the list stays open while several options are\n * ticked. The trigger shows the single selection's label, or a count.\n */\nconst props = withDefaults(\n  defineProps<{\n    options: MultiSelectOption[];\n    modelValue?: string[];\n    /** Trigger text when nothing is selected — usually the \"all …\" reading. */\n    placeholder: string;\n    ariaLabel: string;\n    searchPlaceholder?: string;\n    /** Trigger text for N selections, with `{count}` interpolated. */\n    countLabel?: string;\n    disabled?: boolean;\n    size?: \"default\" | \"sm\";\n    class?: string;\n  }>(),\n  {\n    modelValue: () => [],\n    searchPlaceholder: undefined,\n    countLabel: undefined,\n    disabled: false,\n    size: \"default\",\n    class: undefined,\n  },\n);\n\nconst emit = defineEmits<{\n  \"update:modelValue\": [value: string[]];\n}>();\n\nconst search = ref(\"\");\n\nconst searchPlaceholderText = computed(\n  () => props.searchPlaceholder ?? i18n.global.t(\"common.search\"),\n);\n\nconst filteredOptions = computed(() => {\n  const needle = normalizeArabic(search.value.trim());\n  if (!needle) return props.options;\n  return props.options.filter((o) => normalizeArabic(o.label).includes(needle));\n});\n\nconst triggerLabel = computed(() => {\n  const selected = props.modelValue;\n  if (selected.length === 0) return props.placeholder;\n  if (selected.length === 1) {\n    return props.options.find((o) => o.value === selected[0])?.label ?? props.placeholder;\n  }\n  if (props.countLabel) return props.countLabel.replace(\"{count}\", String(selected.length));\n  return `${selected.length}`;\n});\n\nfunction onUpdate(raw: unknown) {\n  emit(\"update:modelValue\", Array.isArray(raw) ? raw.map(String) : []);\n}\n\nfunction clear() {\n  emit(\"update:modelValue\", []);\n}\n\nfunction onOpenChange(open: boolean) {\n  if (open) search.value = \"\";\n}\n</script>\n\n<template>\n  <Combobox\n    :model-value=\"modelValue\"\n    :multiple=\"true\"\n    :ignore-filter=\"true\"\n    :disabled=\"disabled\"\n    :class=\"cn('w-full', props.class)\"\n    @update:model-value=\"onUpdate\"\n    @update:open=\"onOpenChange\"\n  >\n    <ComboboxAnchor as-child class=\"w-full\">\n      <ComboboxTrigger as-child>\n        <Button\n          type=\"button\"\n          variant=\"outline\"\n          :size=\"size\"\n          :disabled=\"disabled\"\n          :aria-label=\"ariaLabel\"\n          class=\"w-full justify-between font-normal\"\n        >\n          <span class=\"truncate\">{{ triggerLabel }}</span>\n          <span class=\"flex shrink-0 items-center gap-1\">\n            <XIcon\n              v-if=\"modelValue.length > 0\"\n              class=\"size-4 opacity-50 hover:opacity-100\"\n              :aria-label=\"i18n.global.t('common.clear')\"\n              @click.stop.prevent=\"clear\"\n            />\n            <ChevronsUpDownIcon class=\"size-4 opacity-50\" aria-hidden=\"true\" />\n          </span>\n        </Button>\n      </ComboboxTrigger>\n    </ComboboxAnchor>\n    <ComboboxList>\n      <ComboboxInput\n        v-model=\"search\"\n        :display-value=\"() => ''\"\n        :placeholder=\"searchPlaceholderText\"\n      />\n      <ComboboxEmpty>{{ i18n.global.t(\"common.noResults\") }}</ComboboxEmpty>\n      <ComboboxViewport>\n        <ComboboxItem\n          v-for=\"o in filteredOptions\"\n          :key=\"o.value\"\n          :value=\"o.value\"\n          :text-value=\"o.label\"\n        >\n          {{ o.label }}\n          <ComboboxItemIndicator>\n            <CheckIcon class=\"pointer-events-none\" />\n          </ComboboxItemIndicator>\n        </ComboboxItem>\n      </ComboboxViewport>\n    </ComboboxList>\n  </Combobox>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/MultiSelect.vue"
+    }
+  ],
+  "type": "registry:component"
+}

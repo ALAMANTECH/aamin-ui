@@ -1,0 +1,21 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "status-badge",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/badge",
+    "@aamin/lib-i18n",
+    "@aamin/locale-status"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/StatusBadge.vue",
+      "content": "<script setup lang=\"ts\">\nimport { computed } from \"vue\";\nimport { Badge, type BadgeVariants } from \"@/components/ui/badge\";\nimport { i18n } from \"@/lib/i18n\";\n\nconst t = i18n.global.t;\n\ntype Variant = NonNullable<BadgeVariants[\"variant\"]>;\n\nexport interface StatusMeta {\n  variant: Variant;\n  /** Optional display override; defaults to `status.<code>` or the raw string. */\n  label?: string;\n}\n\nconst props = withDefaults(\n  defineProps<{\n    status: string;\n    /** Extends (not replaces) the default domain map. */\n    map?: Record<string, StatusMeta>;\n  }>(),\n  { map: undefined },\n);\n\n// Default mapping, keyed by canonical English status codes. Labels come from\n// `status.<code>` in the locale files, so they follow the UI language. Callers\n// pass `map` to add or override entries for their own screens (retailers, POS,\n// marketers, …); a status with no `status.<code>` key renders as the raw string.\nconst defaultMap: Record<string, StatusMeta> = {\n  completed: { variant: \"success\" },\n  pending: { variant: \"warning\" },\n  rejected: { variant: \"destructive\" },\n  active: { variant: \"success\" },\n  enabled: { variant: \"success\" },\n  suspended: { variant: \"destructive\" },\n};\n\nconst resolved = computed<StatusMeta>(\n  () => ({ ...defaultMap, ...props.map })[props.status] ?? { variant: \"secondary\" },\n);\n\nconst label = computed(() => {\n  const key = `status.${props.status}`;\n  return resolved.value.label ?? (i18n.global.te(key) ? t(key) : props.status);\n});\n</script>\n\n<template>\n  <Badge :variant=\"resolved.variant\" class=\"gap-1.5\">\n    <span class=\"size-1.5 rounded-full bg-current\" aria-hidden=\"true\" />\n    {{ label }}\n  </Badge>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/StatusBadge.vue"
+    }
+  ],
+  "type": "registry:component"
+}

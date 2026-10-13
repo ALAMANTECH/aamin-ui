@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-daybook",
+  "files": [
+    {
+      "path": "src/locales/ar/daybook.json.txt",
+      "content": "{\n  \"daybook\": {\n    \"dayNet\": \"صافي اليوم\",\n    \"dayTurnover\": \"حركة اليوم\",\n    \"rows\": \"صف\",\n    \"empty\": \"لا صفوف بعد.\",\n    \"loadError\": \"تعذّر تحميل الدفتر\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/daybook.json"
+    },
+    {
+      "path": "src/locales/en/daybook.json.txt",
+      "content": "{\n  \"daybook\": {\n    \"dayNet\": \"Day net\",\n    \"dayTurnover\": \"Day turnover\",\n    \"rows\": \"rows\",\n    \"empty\": \"No rows yet.\",\n    \"loadError\": \"Could not load ledger\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/daybook.json"
+    }
+  ],
+  "type": "registry:file"
+}

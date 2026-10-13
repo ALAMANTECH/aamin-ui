@@ -1,0 +1,16 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "use-dir",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "files": [
+    {
+      "path": "src/composables/useDir.ts",
+      "content": "import { ref, watchEffect } from \"vue\";\n\nexport type Dir = \"rtl\" | \"ltr\";\n\n// Plain module-level ref — NOT persisted. The persisted source of truth is the\n// locale (`aamin-ui-locale`, see useLocale), which rewrites this on every load.\nconst dir = ref<Dir>(\"rtl\");\n\n// Register the <html> side-effect ONCE at module scope rather than per call\n// site (there are several). The effect reads the shared `dir` ref, so every\n// consumer stays in sync from this single writer. `<html lang>` belongs to\n// useLocale(), which also writes `dir` — locale owns direction.\nwatchEffect(() => {\n  document.documentElement.dir = dir.value;\n});\n\n/**\n * Document direction, RTL-first (derived from the persisted locale). The value is applied to <html>\n * so every logical property and reka-ui primitive follows automatically.\n * Read it here (it feeds reka's ConfigProvider); change it only through\n * useLocale() — never toggle direction alone (rule 7), which is why there is\n * deliberately no `toggle()` here.\n */\nexport function useDir() {\n  return { dir };\n}\n",
+      "type": "registry:composable",
+      "target": "~/src/composables/useDir.ts"
+    }
+  ],
+  "type": "registry:composable"
+}

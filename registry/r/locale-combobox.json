@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-combobox",
+  "files": [
+    {
+      "path": "src/locales/ar/combobox.json.txt",
+      "content": "{\n  \"combobox\": {\n    \"open\": \"فتح القائمة\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/combobox.json"
+    },
+    {
+      "path": "src/locales/en/combobox.json.txt",
+      "content": "{\n  \"combobox\": {\n    \"open\": \"Open list\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/combobox.json"
+    }
+  ],
+  "type": "registry:file"
+}

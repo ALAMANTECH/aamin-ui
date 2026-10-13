@@ -1,0 +1,17 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "use-poll",
+  "dependencies": [
+    "@vueuse/core@^14.4.0",
+    "vue@^3.5.40"
+  ],
+  "files": [
+    {
+      "path": "src/composables/usePoll.ts",
+      "content": "import type { Ref } from \"vue\";\nimport { shallowRef } from \"vue\";\nimport { tryOnScopeDispose, useIntervalFn } from \"@vueuse/core\";\n\nexport interface UsePollOptions {\n  /** Poll interval in milliseconds. */\n  interval: number;\n  /** Start polling as soon as the composable runs. @default true */\n  immediate?: boolean;\n  /** Consecutive `fn` rejections after which polling auto-stops. @default Infinity */\n  maxFailures?: number;\n}\n\nexport interface UsePollReturn {\n  /** Whether the interval timer is currently running. */\n  isActive: Readonly<Ref<boolean>>;\n  /** (Re)starts polling and resets the consecutive-failure counter. */\n  start: () => void;\n  /** Stops polling. Does not reset `failures`. */\n  stop: () => void;\n  /** Consecutive rejection count — reset to 0 on any success or on `start()`. */\n  failures: Readonly<Ref<number>>;\n}\n\n/**\n * Thin wrapper around `useIntervalFn` that calls `fn` on a fixed interval and\n * auto-stops after `maxFailures` consecutive rejections — e.g. a flaky-network\n * demo, or a real backend that's stopped responding, shouldn't poll forever.\n * `fn` may be sync or async; a thrown error / rejected promise counts as one\n * failure, any other return resets the counter to 0.\n *\n * The interval is always torn down on scope dispose: `useIntervalFn` already\n * registers `tryOnScopeDispose(pause)` internally, and this composable adds\n * its own `tryOnScopeDispose(stop)` on top as cheap, explicit defense-in-depth\n * (see plan 009 — composables in this kit must not leak timers).\n */\nexport function usePoll(fn: () => unknown, options: UsePollOptions): UsePollReturn {\n  const { interval, immediate = true, maxFailures = Infinity } = options;\n  const failures = shallowRef(0);\n\n  async function tick() {\n    try {\n      await fn();\n      failures.value = 0;\n    } catch {\n      failures.value += 1;\n      if (failures.value >= maxFailures) {\n        pause();\n      }\n    }\n  }\n\n  const { isActive, pause, resume } = useIntervalFn(tick, interval, { immediate });\n\n  function start() {\n    failures.value = 0;\n    resume();\n  }\n\n  tryOnScopeDispose(pause);\n\n  return { isActive, start, stop: pause, failures };\n}\n",
+      "type": "registry:composable",
+      "target": "~/src/composables/usePoll.ts"
+    }
+  ],
+  "type": "registry:composable"
+}

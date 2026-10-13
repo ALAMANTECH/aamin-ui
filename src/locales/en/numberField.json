@@ -1,0 +1,6 @@
+{
+  "numberField": {
+    "decrement": "Decrease value",
+    "increment": "Increase value"
+  }
+}

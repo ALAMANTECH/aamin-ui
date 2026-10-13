@@ -1,0 +1,13 @@
+{
+  "notifications": {
+    "bellLabel": "Notifications",
+    "title": "Notifications",
+    "markAll": "Mark all read",
+    "tabUnread": "Unread",
+    "tabAll": "All",
+    "empty": "No new notifications",
+    "emptyHint": "New alerts show up here as soon as they arrive.",
+    "loadError": "Could not load notifications",
+    "readFailed": "Could not mark the notification read"
+  }
+}

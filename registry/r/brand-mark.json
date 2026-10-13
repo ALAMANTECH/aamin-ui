@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "brand-mark",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/BrandMark.vue",
+      "content": "<script lang=\"ts\">\n/**\n * Tint cycle for letter marks — theme tokens only, so a rebrand re-tints\n * every mark from the token file.\n */\nexport const BRAND_MARK_TONES = [\n  \"bg-primary/15 text-primary\",\n  \"bg-chart-2/15 text-chart-2\",\n  \"bg-success/15 text-success\",\n  \"bg-warning/15 text-warning\",\n  \"bg-destructive/15 text-destructive\",\n] as const;\n\n/** Stable tint for a seed: numbers index the cycle, strings hash into it. */\nexport function toneFor(seed: string | number): string {\n  let n: number;\n  if (typeof seed === \"number\") {\n    n = Math.abs(Math.trunc(seed));\n  } else {\n    n = 0;\n    for (const ch of seed) n = (n * 31 + ch.codePointAt(0)!) >>> 0;\n  }\n  return BRAND_MARK_TONES[n % BRAND_MARK_TONES.length]!;\n}\n\n/** First character of the trimmed name, \"?\" for a blank one. */\nexport function letterFor(name: string): string {\n  const s = name.trim();\n  return s ? [...s][0]! : \"?\";\n}\n</script>\n\n<script setup lang=\"ts\">\nimport { computed, ref, watch, type HTMLAttributes } from \"vue\";\nimport { cn } from \"@/lib/utils\";\n\n/**\n * Logo tile for a brand / provider / merchant. The image fills the mark edge\n * to edge (app-icon style, no plate behind it); a missing or failed image\n * falls back to the name's first letter on a tint picked from `seed`, so the\n * same entity always gets the same colour.\n */\nconst props = withDefaults(\n  defineProps<{\n    /** Display name — first character used when there is no image. */\n    name: string;\n    /** Logo / icon URL; empty or failed loads fall back to a letter mark. */\n    src?: string | null;\n    /** Stable id for tint cycling (number or string). */\n    seed?: string | number;\n    size?: \"sm\" | \"md\" | \"lg\";\n    class?: HTMLAttributes[\"class\"];\n  }>(),\n  { src: null, seed: 0, size: \"md\", class: undefined },\n);\n\nconst broken = ref(false);\n\nwatch(\n  () => props.src,\n  () => {\n    broken.value = false;\n  },\n);\n\nconst url = computed(() => {\n  const s = typeof props.src === \"string\" ? props.src.trim() : \"\";\n  return s || null;\n});\n\nconst showImage = computed(() => Boolean(url.value) && !broken.value);\n\nconst sizeClass = computed(() => {\n  switch (props.size) {\n    case \"sm\":\n      return \"size-10 rounded-lg text-sm\";\n    case \"lg\":\n      return \"size-14 rounded-xl text-lg\";\n    default:\n      return \"size-12 rounded-lg text-base\";\n  }\n});\n</script>\n\n<template>\n  <span\n    data-slot=\"brand-mark\"\n    :class=\"\n      cn(\n        'grid shrink-0 place-items-center overflow-hidden border border-border font-bold',\n        sizeClass,\n        showImage ? '' : toneFor(seed),\n        props.class,\n      )\n    \"\n  >\n    <img\n      v-if=\"showImage\"\n      :src=\"url!\"\n      alt=\"\"\n      class=\"size-full object-cover\"\n      @error=\"broken = true\"\n    />\n    <span v-else aria-hidden=\"true\">{{ letterFor(name) }}</span>\n  </span>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/BrandMark.vue"
+    }
+  ],
+  "type": "registry:component"
+}

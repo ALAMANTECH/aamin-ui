@@ -1,0 +1,17 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "lib-utils",
+  "dependencies": [
+    "clsx@^2.1.1",
+    "tailwind-merge@^3.6.0"
+  ],
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import type { ClassValue } from \"clsx\"\nimport { clsx } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n\n/**\n * Normalizes Arabic text for tolerant search matching: strips tashkeel\n * (diacritics) and unifies common hamza/alef and taa-marbuta/alef-maqsura\n * spelling variants, so a bare-alef spelling of a word also matches a\n * hamza-alef spelling of the same word (see the combobox demo data).\n *\n * The codepoints below are generated from numeric constants (see the\n * script that produced this file in git history / plan 006) rather than\n * hand-typed, since bidi Arabic text mixed with regex syntax is very easy\n * to mistype or misread by eye, and a stray character here would silently\n * break matching without any type or lint error to catch it.\n */\nexport function normalizeArabic(input: string): string {\n  return input\n    .trim()\n    .toLowerCase()\n    .replace(/[ً-ٰٟ]/g, \"\") // strip tashkeel (diacritics)\n    .replace(/[آأإا]/g, \"ا\") // alef variants → bare alef\n    .replace(/ة/g, \"ه\") // taa marbuta → haa\n    .replace(/ى/g, \"ي\") // alef maqsura → yaa\n}\n",
+      "type": "registry:lib",
+      "target": "~/src/lib/utils.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-copy",
+  "files": [
+    {
+      "path": "src/locales/ar/copy.json.txt",
+      "content": "{\n  \"copy\": {\n    \"label\": \"نسخ\",\n    \"copied\": \"تم نسخ «{value}»\",\n    \"failed\": \"فشل نسخ البيانات\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/copy.json"
+    },
+    {
+      "path": "src/locales/en/copy.json.txt",
+      "content": "{\n  \"copy\": {\n    \"label\": \"Copy\",\n    \"copied\": \"Copied \\\"{value}\\\"\",\n    \"failed\": \"Could not copy\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/copy.json"
+    }
+  ],
+  "type": "registry:file"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "kbd",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/Kbd.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { HTMLAttributes } from \"vue\";\nimport { cn } from \"@/lib/utils\";\n\nconst props = defineProps<{\n  class?: HTMLAttributes[\"class\"];\n}>();\n</script>\n\n<template>\n  <kbd :class=\"cn('num rounded bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground', props.class)\">\n    <slot />\n  </kbd>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/Kbd.vue"
+    }
+  ],
+  "type": "registry:component"
+}

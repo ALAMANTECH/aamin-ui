@@ -1,0 +1,24 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "sonner",
+  "dependencies": [
+    "vue-sonner@^2.0.9"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-icons",
+    "@aamin/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/sonner/Sonner.vue",
+      "content": "<script lang=\"ts\" setup>\nimport {\n  CircleCheckIcon,\n  InfoIcon,\n  TriangleAlertIcon,\n  OctagonXIcon,\n  Loader2Icon,\n  XIcon,\n} from \"@/lib/icons\";\n\n\nimport type { ToasterProps } from \"vue-sonner\"\nimport { Toaster as Sonner } from \"vue-sonner\"\n// vue-sonner v2 ships its styles separately — without this import every\n// toast renders as an invisible unstyled <li>.\nimport \"vue-sonner/style.css\"\nimport { cn } from \"@/lib/utils\"\n\nconst props = defineProps<ToasterProps>()\n</script>\n\n<template>\n  <Sonner\n    :class=\"cn('toaster group', props.class)\"\n    :style=\"{\n      '--normal-bg': 'var(--popover)',\n      '--normal-text': 'var(--popover-foreground)',\n      '--normal-border': 'var(--border)',\n      '--border-radius': 'var(--radius)',\n      '--gray2': 'color-mix(in oklab, var(--popover) 90%, transparent)',\n      '--gray3': 'var(--border)',\n      '--gray4': 'var(--border)',\n      '--gray5': 'var(--border)',\n      '--gray10': 'var(--muted-foreground)',\n      '--gray11': 'var(--muted-foreground)',\n      '--gray12': 'var(--popover-foreground)',\n      // Typed toasts (rich-colors): soft tinted surfaces in the kit's status\n      // hues — same pattern as the badge success/warning variants — instead\n      // of sonner's loud solid fills. Icon hue is re-saturated below.\n      '--success-bg': 'color-mix(in oklab, var(--success) 14%, var(--popover))',\n      '--success-border': 'color-mix(in oklab, var(--success) 40%, var(--border))',\n      '--success-text': 'var(--popover-foreground)',\n      '--info-bg': 'color-mix(in oklab, var(--chart-2) 14%, var(--popover))',\n      '--info-border': 'color-mix(in oklab, var(--chart-2) 40%, var(--border))',\n      '--info-text': 'var(--popover-foreground)',\n      '--warning-bg': 'color-mix(in oklab, var(--warning) 16%, var(--popover))',\n      '--warning-border': 'color-mix(in oklab, var(--warning) 45%, var(--border))',\n      '--warning-text': 'var(--popover-foreground)',\n      '--error-bg': 'color-mix(in oklab, var(--destructive) 14%, var(--popover))',\n      '--error-border': 'color-mix(in oklab, var(--destructive) 40%, var(--border))',\n      '--error-text': 'var(--popover-foreground)',\n    }\"\n    v-bind=\"props\"\n    :toast-options=\"{\n      classes: {\n        toast: 'rounded-2xl',\n      },\n      ...props.toastOptions,\n    }\"\n  >\n    <template #success-icon>\n      <CircleCheckIcon class=\"size-4\" />\n    </template>\n    <template #info-icon>\n      <InfoIcon class=\"size-4\" />\n    </template>\n    <template #warning-icon>\n      <TriangleAlertIcon class=\"size-4\" />\n    </template>\n    <template #error-icon>\n      <OctagonXIcon class=\"size-4\" />\n    </template>\n    <template #loading-icon>\n      <div>\n        <Loader2Icon class=\"size-4 animate-spin\" />\n      </div>\n    </template>\n    <template #close-icon>\n      <XIcon class=\"size-4\" />\n    </template>\n  </Sonner>\n</template>\n\n<style>\n/* Toasts teleport to <body>, so these must stay global (no `scoped`).\n   The *-text vars above keep the message in the readable foreground; the\n   ICON carries the saturated status hue so the toast type reads at a glance.\n   info has no dedicated token — it borrows the theme's blue (chart-2) so it\n   stays distinct from success's mint. */\n[data-sonner-toast][data-type=\"success\"] [data-icon] {\n  color: var(--success);\n}\n[data-sonner-toast][data-type=\"info\"] [data-icon] {\n  color: var(--chart-2);\n}\n[data-sonner-toast][data-type=\"warning\"] [data-icon] {\n  color: var(--warning);\n}\n[data-sonner-toast][data-type=\"error\"] [data-icon] {\n  color: var(--destructive);\n}\n</style>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/sonner/index.ts",
+      "content": "export { default as Toaster } from \"./Sonner.vue\"\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

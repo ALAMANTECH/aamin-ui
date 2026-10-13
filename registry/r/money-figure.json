@@ -1,0 +1,21 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "money-figure",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-money",
+    "@aamin/lib-utils",
+    "@aamin/tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/MoneyFigure.vue",
+      "content": "<script setup lang=\"ts\">\nimport { computed } from \"vue\";\nimport { Tooltip, TooltipContent, TooltipTrigger } from \"@/components/ui/tooltip\";\nimport { cn } from \"@/lib/utils\";\nimport { formatMoney, formatMoneyExact, moneySizeClass, type MoneySize } from \"@/lib/money\";\n\ndefineOptions({ inheritAttrs: false });\n\n/**\n * The money headline: the full grouped figure (\"154,863,047.5\"), never\n * compacted — the business reads exact numbers. Up to 3 decimals on screen,\n * the stored 5 in a tooltip, and only when that tooltip has something new to\n * say. Long values step the font down (see moneySizeClass) instead of\n * overflowing the tile.\n */\nconst props = withDefaults(\n  defineProps<{\n    value: number;\n    currency: string;\n    /** Exact server string for the tooltip; defaults to formatMoneyExact(value). */\n    exact?: string;\n    size?: MoneySize;\n    tone?: \"default\" | \"destructive\" | \"success\";\n  }>(),\n  { exact: undefined, size: \"md\", tone: \"default\" },\n);\n\nconst text = computed(() => formatMoney(props.value));\nconst exactText = computed(() => props.exact ?? formatMoneyExact(props.value));\n/** No hover affordance when the tooltip would only repeat the headline. */\nconst truncated = computed(() => exactText.value !== text.value);\nconst numberClass = computed(() => moneySizeClass(text.value, props.size));\n\nconst TONE_CLASS: Record<NonNullable<typeof props.tone>, string> = {\n  default: \"text-foreground\",\n  destructive: \"text-destructive\",\n  success: \"text-success\",\n};\n</script>\n\n<template>\n  <Tooltip v-if=\"truncated\">\n    <TooltipTrigger as-child>\n      <p :class=\"cn('m-0 flex cursor-help flex-wrap items-baseline gap-x-1.5', $attrs.class)\">\n        <span\n          class=\"num leading-none font-semibold tracking-tight\"\n          :class=\"[numberClass, TONE_CLASS[tone]]\"\n          >{{ text }}</span\n        >\n        <span class=\"text-muted-foreground\" :class=\"size === 'sm' ? 'text-[10px]' : 'text-xs'\">\n          {{ currency }}\n        </span>\n      </p>\n    </TooltipTrigger>\n    <TooltipContent>\n      <span class=\"num\">{{ exactText }}</span> {{ currency }}\n    </TooltipContent>\n  </Tooltip>\n  <p v-else :class=\"cn('m-0 flex flex-wrap items-baseline gap-x-1.5', $attrs.class)\">\n    <span\n      class=\"num leading-none font-semibold tracking-tight\"\n      :class=\"[numberClass, TONE_CLASS[tone]]\"\n      >{{ text }}</span\n    >\n    <span class=\"text-muted-foreground\" :class=\"size === 'sm' ? 'text-[10px]' : 'text-xs'\">\n      {{ currency }}\n    </span>\n  </p>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/MoneyFigure.vue"
+    }
+  ],
+  "type": "registry:component"
+}

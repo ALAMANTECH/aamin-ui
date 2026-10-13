@@ -1,0 +1,7 @@
+{
+  "copy": {
+    "label": "Copy",
+    "copied": "Copied \"{value}\"",
+    "failed": "Could not copy"
+  }
+}

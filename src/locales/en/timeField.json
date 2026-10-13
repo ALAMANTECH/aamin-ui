@@ -1,0 +1,15 @@
+{
+  "timeField": {
+    "type": "Type the time",
+    "typeHint": "Or type it, e.g. 1837 or 18:37",
+    "typeInvalid": "Not a valid time. Hours 00 to 23, then minutes",
+    "hour": "Hour",
+    "minute": "Minute",
+    "periods": {
+      "night": "Night",
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening"
+    }
+  }
+}

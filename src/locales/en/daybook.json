@@ -1,0 +1,9 @@
+{
+  "daybook": {
+    "dayNet": "Day net",
+    "dayTurnover": "Day turnover",
+    "rows": "rows",
+    "empty": "No rows yet.",
+    "loadError": "Could not load ledger"
+  }
+}

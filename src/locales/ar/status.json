@@ -1,0 +1,10 @@
+{
+  "status": {
+    "completed": "مكتملة",
+    "pending": "معلّقة",
+    "rejected": "مرفوضة",
+    "active": "نشط",
+    "enabled": "مفعل",
+    "suspended": "موقوف"
+  }
+}

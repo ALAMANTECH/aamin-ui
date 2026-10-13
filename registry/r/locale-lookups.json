@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-lookups",
+  "files": [
+    {
+      "path": "src/locales/ar/lookups.json.txt",
+      "content": "{\n  \"lookups\": {\n    \"board\": {\n      \"keys\": \"انقر على الاسم للتعديل · Enter للحفظ · Esc للإلغاء\",\n      \"clickToEdit\": \"انقر للتعديل\",\n      \"editAria\": \"تعديل {name}\",\n      \"deleteAria\": \"حذف {name}\"\n    }\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/lookups.json"
+    },
+    {
+      "path": "src/locales/en/lookups.json.txt",
+      "content": "{\n  \"lookups\": {\n    \"board\": {\n      \"keys\": \"Click a name to rename · Enter saves · Esc cancels\",\n      \"clickToEdit\": \"Click to rename\",\n      \"editAria\": \"Rename {name}\",\n      \"deleteAria\": \"Delete {name}\"\n    }\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/lookups.json"
+    }
+  ],
+  "type": "registry:file"
+}

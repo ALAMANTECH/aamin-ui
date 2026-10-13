@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "amount",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-money"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/Amount.vue",
+      "content": "<script setup lang=\"ts\">\nimport { computed } from \"vue\";\nimport { formatAmountCell, moneyTitle, parseApiNumber } from \"@/lib/money\";\n\n/**\n * One inline money figure: the digits in `.num` (up to 3 decimals, truncated\n * by money.ts — never rounded — with the stored 5 on hover only when they\n * differ), an optional leading sign and a muted unit. Accepts a number or an\n * API string (\"311,843.61092\"); a blank renders an em-dash.\n */\nconst props = withDefaults(\n  defineProps<{\n    value: number | string | null | undefined;\n    /** Currency unit after the figure, already localized. */\n    unit?: string;\n    /** Show the magnitude only — the side is said in words next to it. */\n    abs?: boolean;\n    sign?: \"+\" | \"−\" | \"\";\n  }>(),\n  { unit: \"\", abs: false, sign: \"\" },\n);\n\nconst shown = computed(() => {\n  if (!props.abs) return props.value;\n  const n = parseApiNumber(props.value);\n  return n == null ? props.value : Math.abs(n);\n});\n</script>\n\n<template>\n  <span class=\"inline-flex items-baseline gap-1 whitespace-nowrap\">\n    <span v-if=\"sign\">{{ sign }}</span>\n    <span class=\"num\" :title=\"moneyTitle(shown)\">{{ formatAmountCell(shown) }}</span>\n    <span v-if=\"unit\" class=\"text-[0.75em] font-normal text-muted-foreground\">{{ unit }}</span>\n  </span>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/Amount.vue"
+    }
+  ],
+  "type": "registry:component"
+}

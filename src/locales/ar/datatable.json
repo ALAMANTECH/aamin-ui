@@ -1,0 +1,33 @@
+{
+  "datatable": {
+    "columns": "الأعمدة",
+    "columnsHiddenAria": "الأعمدة — {count} مخفية",
+    "empty": "لا توجد بيانات",
+    "firstPage": "الصفحة الأولى",
+    "lastPage": "الصفحة الأخيرة",
+    "nextPage": "الصفحة التالية",
+    "pageReadoutAria": "الصفحة {page} من {count} — اضغط للانتقال إلى صفحة أخرى",
+    "pageReadoutHint": "اضغط لكتابة رقم صفحة",
+    "prevPage": "الصفحة السابقة",
+    "rangeOf": "من",
+    "rangeShowing": "عرض",
+    "rowNumber": "#",
+    "rowNumberAria": "رقم الصف",
+    "rowsPerPage": "عدد الصفوف",
+    "rowsPerPageAria": "عدد الصفوف في الصفحة",
+    "select": "تحديد",
+    "selectAll": "تحديد الكل",
+    "selectAllRows": "تحديد كل الصفوف",
+    "selectPage": "تحديد الصفحة الحالية",
+    "selectRow": "تحديد الصف",
+    "selectedRow": "صف محدد",
+    "selectedRows": "صفوف محددة",
+    "showAllColumns": "إظهار كل الأعمدة",
+    "showCards": "عرض كبطاقات",
+    "showColumns": "إظهار الأعمدة",
+    "showTable": "عرض كجدول",
+    "sortBy": "ترتيب",
+    "sortByAria": "ترتيب القائمة",
+    "sortByColumn": "ترتيب حسب {label}"
+  }
+}

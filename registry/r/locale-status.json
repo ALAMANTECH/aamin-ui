@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-status",
+  "files": [
+    {
+      "path": "src/locales/ar/status.json.txt",
+      "content": "{\n  \"status\": {\n    \"completed\": \"مكتملة\",\n    \"pending\": \"معلّقة\",\n    \"rejected\": \"مرفوضة\",\n    \"active\": \"نشط\",\n    \"enabled\": \"مفعل\",\n    \"suspended\": \"موقوف\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/status.json"
+    },
+    {
+      "path": "src/locales/en/status.json.txt",
+      "content": "{\n  \"status\": {\n    \"completed\": \"Completed\",\n    \"pending\": \"Pending\",\n    \"rejected\": \"Rejected\",\n    \"active\": \"Active\",\n    \"enabled\": \"Enabled\",\n    \"suspended\": \"Suspended\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/status.json"
+    }
+  ],
+  "type": "registry:file"
+}

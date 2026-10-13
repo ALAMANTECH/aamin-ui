@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-calendar",
+  "files": [
+    {
+      "path": "src/locales/ar/calendar.json.txt",
+      "content": "{\n  \"calendar\": {\n    \"label\": \"التقويم\",\n    \"rangeLabel\": \"نطاق التواريخ\",\n    \"nextMonth\": \"الشهر التالي\",\n    \"prevMonth\": \"الشهر السابق\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/calendar.json"
+    },
+    {
+      "path": "src/locales/en/calendar.json.txt",
+      "content": "{\n  \"calendar\": {\n    \"label\": \"Calendar\",\n    \"rangeLabel\": \"Date range\",\n    \"nextMonth\": \"Next month\",\n    \"prevMonth\": \"Previous month\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/calendar.json"
+    }
+  ],
+  "type": "registry:file"
+}

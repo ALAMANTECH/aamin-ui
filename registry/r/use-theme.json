@@ -1,0 +1,16 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "use-theme",
+  "dependencies": [
+    "@vueuse/core@^14.4.0"
+  ],
+  "files": [
+    {
+      "path": "src/composables/useTheme.ts",
+      "content": "import { useColorMode } from \"@vueuse/core\";\n\n// Single shared color-mode instance (module scope) — every call site returns\n// the same reactive state and storage/media listeners instead of registering\n// its own, matching the singleton pattern useDir uses.\nconst mode = useColorMode({\n  initialValue: \"dark\",\n  disableTransition: false,\n});\n\nfunction toggle() {\n  mode.value = mode.value === \"dark\" ? \"light\" : \"dark\";\n}\n\n/**\n * Dark-first color mode, persisted to localStorage.\n * `mode` is \"dark\" | \"light\" | \"auto\"; `toggle()` flips between dark/light.\n */\nexport function useTheme() {\n  return { mode, toggle };\n}\n",
+      "type": "registry:composable",
+      "target": "~/src/composables/useTheme.ts"
+    }
+  ],
+  "type": "registry:composable"
+}

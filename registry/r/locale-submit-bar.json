@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-submit-bar",
+  "files": [
+    {
+      "path": "src/locales/ar/submitBar.json.txt",
+      "content": "{\n  \"submitBar\": {\n    \"busy\": \"جارٍ الإرسال…\",\n    \"leaveWhileBusy\": \"العملية لا تزال جارية — مغادرة الصفحة الآن قد تلغيها دون أن تعرف نتيجتها. هل تريد المغادرة؟\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/submitBar.json"
+    },
+    {
+      "path": "src/locales/en/submitBar.json.txt",
+      "content": "{\n  \"submitBar\": {\n    \"busy\": \"Submitting…\",\n    \"leaveWhileBusy\": \"The operation is still running — leaving now may cancel it without telling you whether it went through. Leave anyway?\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/submitBar.json"
+    }
+  ],
+  "type": "registry:file"
+}

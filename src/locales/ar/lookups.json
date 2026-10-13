@@ -1,0 +1,10 @@
+{
+  "lookups": {
+    "board": {
+      "keys": "انقر على الاسم للتعديل · Enter للحفظ · Esc للإلغاء",
+      "clickToEdit": "انقر للتعديل",
+      "editAria": "تعديل {name}",
+      "deleteAria": "حذف {name}"
+    }
+  }
+}

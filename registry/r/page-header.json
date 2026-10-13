@@ -1,0 +1,24 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "page-header",
+  "dependencies": [
+    "vue@^3.5.40",
+    "vue-router@^4.6.4"
+  ],
+  "registryDependencies": [
+    "@aamin/breadcrumb",
+    "@aamin/button",
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/locale-common"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/PageHeader.vue",
+      "content": "<script setup lang=\"ts\">\nimport { computed } from \"vue\";\nimport { useRouter } from \"vue-router\";\nimport { ArrowLeftIcon } from \"@/lib/icons\";\nimport { Button } from \"@/components/ui/button\";\nimport { i18n } from \"@/lib/i18n\";\nimport {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/components/ui/breadcrumb\";\n\nconst props = withDefaults(\n  defineProps<{\n    title: string;\n    description?: string;\n    breadcrumbs?: { label: string; to?: string }[];\n    /** `true` → router/browser back; a string → navigate to that path. */\n    back?: string | boolean;\n  }>(),\n  { description: \"\", breadcrumbs: undefined, back: undefined },\n);\n\nconst emit = defineEmits<{ back: [] }>();\n\nconst t = i18n.global.t;\nconst router = useRouter();\n\n// `back` is `string | boolean`, and String precedes Boolean in that union,\n// so Vue's bare-attribute boolean casting doesn't kick in — a plain\n// `<PageHeader back />` compiles to `back=\"\"`, not `back={true}` (documented\n// Vue behavior: https://vuejs.org/guide/components/props.html#boolean-casting).\n// Treat the empty string the same as `true` so the natural shorthand works.\nconst showBack = computed(\n  () =>\n    props.back === true ||\n    props.back === \"\" ||\n    (typeof props.back === \"string\" && props.back.length > 0),\n);\n\nfunction goBack() {\n  emit(\"back\");\n  if (typeof props.back === \"string\" && props.back !== \"\") router.push(props.back);\n  else router.back();\n}\n</script>\n\n<template>\n  <header class=\"space-y-2\">\n    <div v-if=\"breadcrumbs?.length\" class=\"scroll-x max-w-full\">\n      <Breadcrumb>\n        <BreadcrumbList class=\"flex-nowrap\">\n          <template v-for=\"(crumb, index) in breadcrumbs\" :key=\"crumb.label\">\n            <BreadcrumbItem class=\"shrink-0\">\n              <BreadcrumbPage v-if=\"index === breadcrumbs.length - 1\">{{\n                crumb.label\n              }}</BreadcrumbPage>\n              <BreadcrumbLink v-else-if=\"crumb.to\" as-child>\n                <RouterLink :to=\"crumb.to\">{{ crumb.label }}</RouterLink>\n              </BreadcrumbLink>\n              <span v-else>{{ crumb.label }}</span>\n            </BreadcrumbItem>\n            <BreadcrumbSeparator v-if=\"index < breadcrumbs.length - 1\" />\n          </template>\n        </BreadcrumbList>\n      </Breadcrumb>\n    </div>\n\n    <!-- Phones: actions sit at the header's end edge beside the title (an\n         icon-only CTA there is the sheet's \"+\" — pages hide the label with\n         max-sm:hidden). sm+: the title block and actions share one row. -->\n    <div class=\"flex items-start justify-between gap-3 sm:flex-wrap sm:items-end sm:gap-4\">\n      <div class=\"flex min-w-0 flex-1 items-start gap-2.5\">\n        <Button\n          v-if=\"showBack\"\n          variant=\"ghost\"\n          size=\"icon-sm\"\n          class=\"mt-0.5 shrink-0\"\n          :aria-label=\"t('common.back')\"\n          @click=\"goBack\"\n        >\n          <ArrowLeftIcon class=\"size-4 cn-rtl-flip\" />\n        </Button>\n        <div class=\"min-w-0\">\n          <!-- #title: a title that is more than text (a document number in .num);\n               the `title` prop stays the fallback. -->\n          <h1 class=\"text-xl font-semibold tracking-tight wrap-break-word sm:text-2xl\">\n            <slot name=\"title\">{{ title }}</slot>\n          </h1>\n          <p v-if=\"description\" class=\"mt-1 text-sm text-muted-foreground\">{{ description }}</p>\n          <!-- #meta: a detail page's identity lines — status badges, whose it is, when. -->\n          <div v-if=\"$slots.meta\" class=\"mt-2 space-y-1.5\" data-testid=\"page-header-meta\">\n            <slot name=\"meta\" />\n          </div>\n        </div>\n      </div>\n      <div v-if=\"$slots.actions\" class=\"flex shrink-0 flex-wrap items-center gap-2 sm:justify-end\">\n        <slot name=\"actions\" />\n      </div>\n    </div>\n  </header>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/PageHeader.vue"
+    }
+  ],
+  "type": "registry:component"
+}

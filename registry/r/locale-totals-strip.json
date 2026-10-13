@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-totals-strip",
+  "files": [
+    {
+      "path": "src/locales/ar/totalsStrip.json.txt",
+      "content": "{\n  \"totalsStrip\": {\n    \"scope\": \"إجماليات كل الصفحات حسب الفلاتر الحالية\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/totalsStrip.json"
+    },
+    {
+      "path": "src/locales/en/totalsStrip.json.txt",
+      "content": "{\n  \"totalsStrip\": {\n    \"scope\": \"Totals across all pages for the current filters\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/totalsStrip.json"
+    }
+  ],
+  "type": "registry:file"
+}

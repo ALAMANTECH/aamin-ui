@@ -1,0 +1,80 @@
+{
+  "templates": {
+    "unit": {
+      "LYD": "LYD",
+      "USD": "USD"
+    },
+    "sample": {
+      "names": {
+        "atlas": "Demo Trading A",
+        "cedar": "Demo Supplies B",
+        "harbor": "Demo Logistics C",
+        "meridian": "Demo Foods D",
+        "summit": "Demo Electronics E",
+        "oasis": "Demo Pharmacy F"
+      }
+    },
+    "list": {
+      "title": "Accounts",
+      "description": "A list page template — neutral placeholder data",
+      "new": "New account",
+      "searchPlaceholder": "Search by name or code…",
+      "filters": {
+        "status": "Status",
+        "currency": "Currency",
+        "all": "All"
+      },
+      "columns": {
+        "name": "Name",
+        "code": "Code",
+        "currency": "Currency",
+        "balance": "Balance",
+        "outstanding": "Outstanding",
+        "updated": "Updated",
+        "status": "Status"
+      }
+    },
+    "states": {
+      "loadFailed": "Could not load the data",
+      "loadFailedHint": "Check the connection and try again.",
+      "empty": "No accounts yet",
+      "emptyHint": "Create the first account to see it here.",
+      "emptyFiltered": "No matching results",
+      "emptyFilteredHint": "Change the search or clear the filters."
+    },
+    "detail": {
+      "title": "Account",
+      "fields": {
+        "opened": "Opened"
+      },
+      "actions": {
+        "primary": "Record payment",
+        "statement": "Statement",
+        "transfer": "Transfer"
+      },
+      "stats": {
+        "advance": "Advance",
+        "advanceHint": "Not applied to any invoice",
+        "payments": "Payments",
+        "inCredit": "In credit"
+      },
+      "tabs": {
+        "overview": "Overview",
+        "activity": "Activity",
+        "documents": "Documents"
+      },
+      "sections": {
+        "identity": "Identity",
+        "balances": "Balances",
+        "available": "Available",
+        "availableHint": "Balance minus what is outstanding"
+      },
+      "activity": {
+        "payment": "Payment recorded",
+        "invoice": "New invoice"
+      },
+      "documentsEmpty": "No documents",
+      "documentsEmptyHint": "Documents attached to the account appear here."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "compact-pager",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/button",
+    "@aamin/data-table",
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/lib-utils",
+    "@aamin/locale-datatable"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/CompactPager.vue",
+      "content": "<script setup lang=\"ts\">\nimport {\n  ChevronLeftIcon,\n  ChevronRightIcon,\n  ChevronsLeftIcon,\n  ChevronsRightIcon,\n} from \"@/lib/icons\";\nimport type { HTMLAttributes } from \"vue\";\nimport { Button } from \"@/components/ui/button\";\nimport PageReadout from \"@/components/app/datatable/PageReadout.vue\";\nimport { i18n } from \"@/lib/i18n\";\nimport { cn } from \"@/lib/utils\";\n\n/**\n * First / prev / \"n / m\" (PageReadout) / next / last pager for lists that are not backed by a TanStack\n * table instance — card grids, the ticket queue, day-grouped ledgers — where\n * DataTablePagination cannot be used. Three screens had hand-rolled this and\n * drifted apart; this is the one shape.\n *\n * Owns the divider and vertical rhythm; pass `class` for the horizontal inset\n * that matches the surrounding sheet.\n */\nconst props = withDefaults(\n  defineProps<{\n    /** Zero-based, matching TanStack's pagination state. */\n    pageIndex: number;\n    pageCount: number;\n    /** Disables both arrows while a request is in flight. */\n    busy?: boolean;\n    class?: HTMLAttributes[\"class\"];\n  }>(),\n  { busy: false, class: undefined },\n);\n\nconst emit = defineEmits<{ \"update:pageIndex\": [value: number] }>();\n\nconst t = i18n.global.t;\n\nfunction go(next: number) {\n  if (next < 0 || next > props.pageCount - 1) return;\n  emit(\"update:pageIndex\", next);\n}\n</script>\n\n<template>\n  <div :class=\"cn('flex flex-wrap items-center gap-3 border-t border-border py-3', props.class)\">\n    <p v-if=\"$slots.label\" class=\"text-xs text-muted-foreground\">\n      <slot name=\"label\" />\n    </p>\n\n    <div class=\"ms-auto flex items-center gap-1.5\">\n      <Button\n        variant=\"outline\"\n        size=\"icon-sm\"\n        :disabled=\"busy || pageIndex <= 0\"\n        :aria-label=\"t('datatable.firstPage')\"\n        @click=\"go(0)\"\n      >\n        <ChevronsLeftIcon class=\"size-4 cn-rtl-flip\" />\n      </Button>\n      <Button\n        variant=\"outline\"\n        size=\"icon-sm\"\n        :disabled=\"busy || pageIndex <= 0\"\n        :aria-label=\"t('datatable.prevPage')\"\n        @click=\"go(pageIndex - 1)\"\n      >\n        <ChevronLeftIcon class=\"size-4 cn-rtl-flip\" />\n      </Button>\n      <PageReadout\n        :page-index=\"pageIndex\"\n        :page-count=\"pageCount\"\n        :busy=\"busy\"\n        class=\"px-1\"\n        @update:page-index=\"go\"\n      />\n      <Button\n        variant=\"outline\"\n        size=\"icon-sm\"\n        :disabled=\"busy || pageIndex >= pageCount - 1\"\n        :aria-label=\"t('datatable.nextPage')\"\n        @click=\"go(pageIndex + 1)\"\n      >\n        <ChevronRightIcon class=\"size-4 cn-rtl-flip\" />\n      </Button>\n      <Button\n        variant=\"outline\"\n        size=\"icon-sm\"\n        :disabled=\"busy || pageIndex >= pageCount - 1\"\n        :aria-label=\"t('datatable.lastPage')\"\n        @click=\"go(pageCount - 1)\"\n      >\n        <ChevronsRightIcon class=\"size-4 cn-rtl-flip\" />\n      </Button>\n    </div>\n  </div>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/CompactPager.vue"
+    }
+  ],
+  "type": "registry:component"
+}

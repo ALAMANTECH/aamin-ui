@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-auth",
+  "files": [
+    {
+      "path": "src/locales/ar/auth.json.txt",
+      "content": "{\n  \"auth\": {\n    \"logout\": \"تسجيل الخروج\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/auth.json"
+    },
+    {
+      "path": "src/locales/en/auth.json.txt",
+      "content": "{\n  \"auth\": {\n    \"logout\": \"Sign out\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/auth.json"
+    }
+  ],
+  "type": "registry:file"
+}

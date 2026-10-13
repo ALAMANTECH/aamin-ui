@@ -1,0 +1,32 @@
+{
+  "common": {
+    "pickDate": "Pick a date",
+    "clearDate": "Clear date",
+    "pickTime": "Pick a time",
+    "clearTime": "Clear time",
+    "filters": "Filters",
+    "more": "More",
+    "clearFilters": "Clear filters",
+    "showResults": "Show results",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "loading": "Loading…",
+    "retry": "Retry",
+    "back": "Back",
+    "yes": "Yes",
+    "no": "No",
+    "actions": "Actions",
+    "noData": "No data available",
+    "noResults": "No results.",
+    "networkError": "Could not reach the server — check your connection and try again.",
+    "low": "Low",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "clear": "Clear"
+  }
+}

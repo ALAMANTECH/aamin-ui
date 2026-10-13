@@ -1,0 +1,24 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "filter-sheet",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/badge",
+    "@aamin/button",
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/locale-common",
+    "@aamin/sheet"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/FilterSheet.vue",
+      "content": "<script setup lang=\"ts\">\nimport { ref } from \"vue\";\nimport { SlidersHorizontalIcon } from \"@/lib/icons\";\nimport { Badge } from \"@/components/ui/badge\";\nimport { Button } from \"@/components/ui/button\";\nimport { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle } from \"@/components/ui/sheet\";\nimport { i18n } from \"@/lib/i18n\";\n\n/**\n * A list's filters on a small screen: the \"Filters\" button (with the count of\n * active ones) and the bottom sheet it opens — the default slot is the host's\n * filter fields in their stacked layout. Nothing is deferred: edits apply as\n * they are made, \"show results\" only closes. The host hides the button where\n * its fields fit inline (`class=\"lg:hidden\"`).\n */\ndefineOptions({ inheritAttrs: false });\ndefineProps<{ count: number }>();\nconst emit = defineEmits<{ clear: [] }>();\n\nconst open = ref(false);\n</script>\n\n<template>\n  <Button\n    v-bind=\"$attrs\"\n    variant=\"outline\"\n    class=\"shrink-0\"\n    data-testid=\"filters-open\"\n    @click=\"open = true\"\n  >\n    <SlidersHorizontalIcon class=\"size-4\" aria-hidden=\"true\" />\n    {{ i18n.global.t(\"common.filters\") }}\n    <Badge v-if=\"count\" variant=\"default\" class=\"num\">{{ count }}</Badge>\n  </Button>\n  <Sheet v-model:open=\"open\">\n    <SheetContent\n      side=\"bottom\"\n      :aria-describedby=\"undefined\"\n      class=\"flex max-h-[88svh] flex-col gap-0 rounded-t-2xl p-0\"\n    >\n      <SheetHeader class=\"border-b px-4 py-4 pe-12\">\n        <SheetTitle>{{ i18n.global.t(\"common.filters\") }}</SheetTitle>\n      </SheetHeader>\n      <div class=\"min-h-0 flex-1 overflow-y-auto px-4 py-4\">\n        <slot />\n      </div>\n      <SheetFooter class=\"flex-row gap-2 border-t\">\n        <Button v-if=\"count\" variant=\"outline\" class=\"flex-1\" @click=\"emit('clear')\">\n          {{ i18n.global.t(\"common.clearFilters\") }}\n        </Button>\n        <Button class=\"flex-1\" @click=\"open = false\">{{\n          i18n.global.t(\"common.showResults\")\n        }}</Button>\n      </SheetFooter>\n    </SheetContent>\n  </Sheet>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/FilterSheet.vue"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-chart",
+  "files": [
+    {
+      "path": "src/locales/ar/chart.json.txt",
+      "content": "{\n  \"chart\": {\n    \"noData\": \"لا توجد بيانات في هذه الفترة\",\n    \"error\": \"تعذّر تحميل المخطط\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/chart.json"
+    },
+    {
+      "path": "src/locales/en/chart.json.txt",
+      "content": "{\n  \"chart\": {\n    \"noData\": \"No data in this range\",\n    \"error\": \"Could not load the chart\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/chart.json"
+    }
+  ],
+  "type": "registry:file"
+}

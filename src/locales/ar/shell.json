@@ -1,0 +1,10 @@
+{
+  "shell": {
+    "user": {
+      "name": "مستخدم تجريبي",
+      "email": "user@example.com",
+      "role": "مدير النظام",
+      "initials": "م‌ت"
+    }
+  }
+}

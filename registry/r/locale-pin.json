@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-pin",
+  "files": [
+    {
+      "path": "src/locales/ar/pin.json.txt",
+      "content": "{\n  \"pin\": {\n    \"invalid\": \"الرمز غير صحيح، حاول مجددًا\",\n    \"checking\": \"جارٍ التحقق…\",\n    \"resendPrompt\": \"لم يصلك الرمز؟\",\n    \"resendIn\": \"إعادة الإرسال بعد {seconds} ث\",\n    \"resend\": \"إعادة الإرسال\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/pin.json"
+    },
+    {
+      "path": "src/locales/en/pin.json.txt",
+      "content": "{\n  \"pin\": {\n    \"invalid\": \"Invalid code, try again\",\n    \"checking\": \"Verifying…\",\n    \"resendPrompt\": \"Didn't get the code?\",\n    \"resendIn\": \"Resend in {seconds}s\",\n    \"resend\": \"Resend\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/pin.json"
+    }
+  ],
+  "type": "registry:file"
+}

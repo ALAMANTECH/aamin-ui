@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-pagination",
+  "files": [
+    {
+      "path": "src/locales/ar/pagination.json.txt",
+      "content": "{\n  \"pagination\": {\n    \"more\": \"المزيد من الصفحات\",\n    \"first\": \"الأولى\",\n    \"last\": \"الأخيرة\",\n    \"next\": \"التالي\",\n    \"previous\": \"السابق\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/pagination.json"
+    },
+    {
+      "path": "src/locales/en/pagination.json.txt",
+      "content": "{\n  \"pagination\": {\n    \"more\": \"More pages\",\n    \"first\": \"First\",\n    \"last\": \"Last\",\n    \"next\": \"Next\",\n    \"previous\": \"Previous\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/pagination.json"
+    }
+  ],
+  "type": "registry:file"
+}

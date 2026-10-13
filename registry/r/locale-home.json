@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-home",
+  "files": [
+    {
+      "path": "src/locales/ar/home.json.txt",
+      "content": "{\n  \"home\": {\n    \"title\": \"الرئيسية\",\n    \"description\": \"نقطة البداية — استبدل هذه الصفحة بأول شاشة حقيقية في تطبيقك\",\n    \"emptyTitle\": \"ابدأ ببناء تطبيقك\",\n    \"emptyHint\": \"اقرأ AGENTS.md وdocs/new-project.md أولًا. كل مكوّنات النظام جاهزة — انسخ الأنماط من صفحات المرجع بدل البناء من الصفر.\",\n    \"reference\": \"المرجع الحي (وضع التطوير فقط)\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/home.json"
+    },
+    {
+      "path": "src/locales/en/home.json.txt",
+      "content": "{\n  \"home\": {\n    \"title\": \"Home\",\n    \"description\": \"The starting point — replace this page with your app's first real screen\",\n    \"emptyTitle\": \"Start building your app\",\n    \"emptyHint\": \"Read AGENTS.md and docs/new-project.md first. Every kit component is ready — copy the patterns from the reference pages instead of building from scratch.\",\n    \"reference\": \"Live reference (dev only)\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/home.json"
+    }
+  ],
+  "type": "registry:file"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "lib-phone",
+  "files": [
+    {
+      "path": "src/lib/phone.ts",
+      "content": "/**\n * Libyan mobile number helpers for phone fields (validate + normalize before submit).\n * Numbers are entered as \"09xxxxxxxx\" (10 digits, 091–095 carriers); some\n * backend tables store them as integers, so the leading zero survives only in\n * display — never round-trip a stored int back through these validators.\n */\n\nconst LY_PHONE_PREFIXES = [\"091\", \"092\", \"093\", \"094\", \"095\"] as const;\n\n/** Digits only — strips spaces, dashes and any other separators. */\nexport function normalizeLibyanPhone(raw: string): string {\n  return raw.replace(/\\D/g, \"\");\n}\n\n/** 10 digits starting with a known Libyan mobile prefix. */\nexport function isLibyanPhone(raw: string): boolean {\n  const digits = normalizeLibyanPhone(raw);\n  return (\n    digits.length === 10 && (LY_PHONE_PREFIXES as readonly string[]).includes(digits.slice(0, 3))\n  );\n}\n",
+      "type": "registry:lib",
+      "target": "~/src/lib/phone.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

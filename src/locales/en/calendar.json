@@ -1,0 +1,8 @@
+{
+  "calendar": {
+    "label": "Calendar",
+    "rangeLabel": "Date range",
+    "nextMonth": "Next month",
+    "prevMonth": "Previous month"
+  }
+}

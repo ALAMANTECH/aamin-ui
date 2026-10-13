@@ -1,0 +1,10 @@
+{
+  "lookups": {
+    "board": {
+      "keys": "Click a name to rename · Enter saves · Esc cancels",
+      "clickToEdit": "Click to rename",
+      "editAria": "Rename {name}",
+      "deleteAria": "Delete {name}"
+    }
+  }
+}

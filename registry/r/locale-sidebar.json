@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-sidebar",
+  "files": [
+    {
+      "path": "src/locales/ar/sidebar.json.txt",
+      "content": "{\n  \"sidebar\": {\n    \"mainNavAria\": \"القائمة الرئيسية\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/sidebar.json"
+    },
+    {
+      "path": "src/locales/en/sidebar.json.txt",
+      "content": "{\n  \"sidebar\": {\n    \"mainNavAria\": \"Main navigation\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/sidebar.json"
+    }
+  ],
+  "type": "registry:file"
+}

@@ -1,0 +1,12 @@
+{
+  "command": {
+    "title": "لوحة الأوامر",
+    "description": "ابحث عن أمر…",
+    "quickSearch": "بحث سريع…",
+    "quickSearchAria": "بحث سريع",
+    "placeholder": "ابحث عن صفحة أو أمر…",
+    "empty": "لا توجد نتائج.",
+    "commands": "أوامر",
+    "toggleTheme": "تبديل المظهر"
+  }
+}

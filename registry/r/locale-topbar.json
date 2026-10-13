@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-topbar",
+  "files": [
+    {
+      "path": "src/locales/ar/topbar.json.txt",
+      "content": "{\n  \"topbar\": {\n    \"toggleSidebar\": \"طي القائمة الجانبية\",\n    \"sidebar\": \"القائمة الجانبية\",\n    \"openMenu\": \"فتح القائمة\",\n    \"menu\": \"القائمة\",\n    \"userMenu\": \"قائمة المستخدم\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/topbar.json"
+    },
+    {
+      "path": "src/locales/en/topbar.json.txt",
+      "content": "{\n  \"topbar\": {\n    \"toggleSidebar\": \"Collapse sidebar\",\n    \"sidebar\": \"Sidebar\",\n    \"openMenu\": \"Open menu\",\n    \"menu\": \"Menu\",\n    \"userMenu\": \"User menu\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/topbar.json"
+    }
+  ],
+  "type": "registry:file"
+}

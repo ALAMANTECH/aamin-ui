@@ -1,0 +1,3814 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry.json",
+  "name": "aamin",
+  "homepage": "https://github.com/ALAMANTECH/aamin-ui",
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-icons",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/accordion/Accordion.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/accordion/AccordionContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/accordion/AccordionItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/accordion/AccordionTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/accordion/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/alert/Alert.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert/AlertAction.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert/AlertDescription.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert/AlertTitle.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog/AlertDialog.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/AlertDialogAction.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/AlertDialogCancel.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/AlertDialogContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/AlertDialogDescription.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/AlertDialogFooter.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/AlertDialogHeader.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/AlertDialogMedia.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/AlertDialogTitle.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/AlertDialogTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "class-variance-authority@^0.7.1",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/avatar/Avatar.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/avatar/AvatarBadge.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/avatar/AvatarFallback.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/avatar/AvatarGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/avatar/AvatarGroupCount.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/avatar/AvatarImage.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/avatar/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "class-variance-authority@^0.7.1",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/badge/Badge.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/badge/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "dependencies": [
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-breadcrumb",
+        "@aamin/locale-common"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb/Breadcrumb.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/BreadcrumbEllipsis.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/BreadcrumbItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/BreadcrumbLink.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/BreadcrumbList.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/BreadcrumbPage.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/BreadcrumbSeparator.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button/Button.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/button/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@internationalized/date@^3.12.2",
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-calendar",
+        "@aamin/native-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/calendar/Calendar.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarCell.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarCellTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarGrid.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarGridBody.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarGridHead.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarGridRow.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarHeadCell.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarHeader.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarHeading.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarNextButton.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/CalendarPrevButton.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/calendar/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/card/Card.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/CardAction.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/CardContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/CardDescription.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/CardFooter.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/CardHeader.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/CardTitle.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "dependencies": [
+        "@unovis/vue@^1.6.7",
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-money",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/chart/ChartContainer.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/chart/ChartLegendContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/chart/ChartStyle.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/chart/ChartTooltipContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/chart/index.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/chart/utils.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-icons",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/checkbox/Checkbox.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/checkbox/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "dependencies": [
+        "reka-ui@^2.10.3"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/collapsible/Collapsible.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/collapsible/CollapsibleContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/collapsible/CollapsibleTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/collapsible/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/input-group",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-combobox"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/combobox/Combobox.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/ComboboxAnchor.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/ComboboxEmpty.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/ComboboxGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/ComboboxInput.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/ComboboxItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/ComboboxItemIndicator.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/ComboboxList.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/ComboboxSeparator.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/ComboboxTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/ComboboxViewport.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/dialog",
+        "@aamin/input-group",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-command"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/command/Command.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/CommandDialog.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/CommandEmpty.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/CommandGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/CommandInput.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/CommandItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/CommandList.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/CommandSeparator.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/CommandShortcut.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-common"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dialog/Dialog.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/DialogClose.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/DialogContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/DialogDescription.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/DialogFooter.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/DialogHeader.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/DialogOverlay.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/DialogScrollContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/DialogTitle.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/DialogTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-icons",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenu.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuCheckboxItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuLabel.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuRadioGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuRadioItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuSeparator.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuShortcut.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuSub.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuSubContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuSubTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/DropdownMenuTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "dependencies": [
+        "reka-ui@^2.10.3",
+        "vee-validate@^4.15.1",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/label",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/form/FormControl.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/FormDescription.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/FormItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/FormLabel.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/FormMessage.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/index.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/injectionKeys.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/useFormField.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input/Input.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/input",
+        "@aamin/lib-utils",
+        "@aamin/textarea"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input-group/InputGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input-group/InputGroupAddon.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input-group/InputGroupButton.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input-group/InputGroupInput.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input-group/InputGroupText.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input-group/InputGroupTextarea.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input-group/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/label/Label.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/label/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-icons",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/native-select/NativeSelect.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/native-select/NativeSelectOptGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/native-select/NativeSelectOption.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/native-select/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "number-field",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-number-field"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/number-field/NumberField.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/number-field/NumberFieldContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/number-field/NumberFieldDecrement.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/number-field/NumberFieldIncrement.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/number-field/NumberFieldInput.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/number-field/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-datatable",
+        "@aamin/locale-pagination"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pagination/Pagination.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/PaginationContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/PaginationEllipsis.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/PaginationFirst.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/PaginationItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/PaginationLast.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/PaginationLink.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/PaginationNext.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/PaginationPrevious.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pin-input",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-icons",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pin-input/PinInput.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pin-input/PinInputGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pin-input/PinInputSeparator.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pin-input/PinInputSlot.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pin-input/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/popover/Popover.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/PopoverAnchor.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/PopoverContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/PopoverDescription.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/PopoverHeader.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/PopoverTitle.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/PopoverTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/progress/Progress.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/progress/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-icons",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/radio-group/RadioGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/radio-group/RadioGroupItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/radio-group/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "range-calendar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@internationalized/date@^3.12.2",
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/calendar",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-calendar",
+        "@aamin/native-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendar.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarCell.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarCellTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarGrid.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarGridBody.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarGridHead.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarGridRow.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarHeadCell.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarHeader.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarHeading.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarNextButton.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/RangeCalendarPrevButton.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/range-calendar/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/scroll-area/ScrollArea.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/scroll-area/ScrollBar.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/scroll-area/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/select/Select.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/SelectContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/SelectGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/SelectItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/SelectItemText.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/SelectLabel.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/SelectScrollDownButton.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/SelectScrollUpButton.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/SelectSeparator.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/SelectTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/SelectValue.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/separator/Separator.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/separator/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-common"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sheet/Sheet.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sheet/SheetClose.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sheet/SheetContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sheet/SheetDescription.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sheet/SheetFooter.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sheet/SheetHeader.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sheet/SheetOverlay.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sheet/SheetTitle.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sheet/SheetTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sheet/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/skeleton/Skeleton.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/skeleton/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "dependencies": [
+        "vue-sonner@^2.0.9"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-icons",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sonner/Sonner.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sonner/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-common"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/spinner/Spinner.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/spinner/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/switch/Switch.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/switch/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "dependencies": [
+        "@tanstack/vue-table@^8.21.3",
+        "@vueuse/core@^14.4.0",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/table/Table.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/TableBody.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/TableCaption.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/TableCell.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/TableEmpty.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/TableFooter.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/TableHead.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/TableHeader.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/TableRow.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/index.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/utils.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "class-variance-authority@^0.7.1",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tabs/Tabs.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tabs/TabsContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tabs/TabsIndicator.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tabs/TabsList.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tabs/TabsTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tabs/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tags-input",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-icons",
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tags-input/TagsInput.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tags-input/TagsInputInput.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tags-input/TagsInputItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tags-input/TagsInputItemDelete.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tags-input/TagsInputItemText.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tags-input/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/textarea/Textarea.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/textarea/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "class-variance-authority@^0.7.1",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle/Toggle.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "class-variance-authority@^0.7.1",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils",
+        "@aamin/toggle"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle-group/ToggleGroup.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle-group/ToggleGroupItem.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle-group/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "reka-ui@^2.10.3",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip/Tooltip.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tooltip/TooltipContent.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tooltip/TooltipProvider.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tooltip/TooltipTrigger.vue",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tooltip/index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:component",
+      "dependencies": [
+        "@tanstack/vue-table@^8.21.3",
+        "@vueuse/core@^14.4.0",
+        "vue@^3.5.40",
+        "vue-router@^4.6.4"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/checkbox",
+        "@aamin/dropdown-menu",
+        "@aamin/input",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-money",
+        "@aamin/locale-datatable",
+        "@aamin/select",
+        "@aamin/table"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/datatable/DataTable.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/datatable/DataTable.vue"
+        },
+        {
+          "path": "src/components/app/datatable/DataTablePagination.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/datatable/DataTablePagination.vue"
+        },
+        {
+          "path": "src/components/app/datatable/DataTableViewOptions.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/datatable/DataTableViewOptions.vue"
+        },
+        {
+          "path": "src/components/app/datatable/PageReadout.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/datatable/PageReadout.vue"
+        },
+        {
+          "path": "src/components/app/datatable/columns.ts",
+          "type": "registry:component",
+          "target": "~/src/components/app/datatable/columns.ts"
+        },
+        {
+          "path": "src/components/app/datatable/index.ts",
+          "type": "registry:component",
+          "target": "~/src/components/app/datatable/index.ts"
+        },
+        {
+          "path": "src/components/app/datatable/page-jump.ts",
+          "type": "registry:component",
+          "target": "~/src/components/app/datatable/page-jump.ts"
+        }
+      ]
+    },
+    {
+      "name": "notification-bell",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40",
+        "vue-router@^4.6.4",
+        "vue-sonner@^2.0.9"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/empty-state",
+        "@aamin/lib-datetime",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-notifications",
+        "@aamin/popover",
+        "@aamin/scroll-area",
+        "@aamin/skeleton",
+        "@aamin/tabs",
+        "@aamin/use-poll"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/NotificationBell.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/NotificationBell.vue"
+        },
+        {
+          "path": "src/components/app/NotificationFeed.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/NotificationFeed.vue"
+        }
+      ]
+    },
+    {
+      "name": "amount",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-money"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/Amount.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/Amount.vue"
+        }
+      ]
+    },
+    {
+      "name": "async-confirm-dialog",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/alert-dialog",
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/locale-common",
+        "@aamin/spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/AsyncConfirmDialog.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/AsyncConfirmDialog.vue"
+        }
+      ]
+    },
+    {
+      "name": "attachment-viewer",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/dialog",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-attachments",
+        "@aamin/tooltip",
+        "@aamin/use-dir"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/AttachmentViewer.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/AttachmentViewer.vue"
+        }
+      ]
+    },
+    {
+      "name": "brand-mark",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/BrandMark.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/BrandMark.vue"
+        }
+      ]
+    },
+    {
+      "name": "chart-state",
+      "type": "registry:component",
+      "registryDependencies": [
+        "@aamin/empty-state",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-chart",
+        "@aamin/skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/ChartState.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/ChartState.vue"
+        }
+      ]
+    },
+    {
+      "name": "compact-pager",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/data-table",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-datatable"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/CompactPager.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/CompactPager.vue"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40",
+        "vue-sonner@^2.0.9"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-copy"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/CopyButton.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/CopyButton.vue"
+        }
+      ]
+    },
+    {
+      "name": "date-field",
+      "type": "registry:component",
+      "dependencies": [
+        "@internationalized/date@^3.12.2",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/calendar",
+        "@aamin/lib-datetime",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-common",
+        "@aamin/popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/DateField.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/DateField.vue"
+        }
+      ]
+    },
+    {
+      "name": "daybook-list",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40",
+        "vue-router@^4.6.4"
+      ],
+      "registryDependencies": [
+        "@aamin/amount",
+        "@aamin/badge",
+        "@aamin/compact-pager",
+        "@aamin/empty-state",
+        "@aamin/lib-datetime",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-common",
+        "@aamin/locale-daybook",
+        "@aamin/skeleton",
+        "@aamin/spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/DaybookList.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/DaybookList.vue"
+        }
+      ]
+    },
+    {
+      "name": "doc-no",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/DocNo.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/DocNo.vue"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-common",
+        "@aamin/spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/EmptyState.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/EmptyState.vue"
+        }
+      ]
+    },
+    {
+      "name": "file-dropzone",
+      "type": "registry:component",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-dropzone"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/FileDropzone.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/FileDropzone.vue"
+        }
+      ]
+    },
+    {
+      "name": "filter-chips",
+      "type": "registry:component",
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-common"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/FilterChips.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/FilterChips.vue"
+        }
+      ]
+    },
+    {
+      "name": "filter-sheet",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/badge",
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-common",
+        "@aamin/sheet"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/FilterSheet.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/FilterSheet.vue"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/Kbd.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/Kbd.vue"
+        }
+      ]
+    },
+    {
+      "name": "lookup-chip-board",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/badge",
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-common",
+        "@aamin/locale-lookups",
+        "@aamin/spinner",
+        "@aamin/tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/LookupChipBoard.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/LookupChipBoard.vue"
+        }
+      ]
+    },
+    {
+      "name": "money-figure",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-money",
+        "@aamin/lib-utils",
+        "@aamin/tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/MoneyFigure.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/MoneyFigure.vue"
+        }
+      ]
+    },
+    {
+      "name": "multi-select",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/combobox",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-common"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/MultiSelect.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/MultiSelect.vue"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40",
+        "vue-router@^4.6.4"
+      ],
+      "registryDependencies": [
+        "@aamin/breadcrumb",
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/locale-common"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/PageHeader.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/PageHeader.vue"
+        }
+      ]
+    },
+    {
+      "name": "pin-confirm",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/dialog",
+        "@aamin/lib-i18n",
+        "@aamin/locale-common",
+        "@aamin/locale-pin",
+        "@aamin/pin-input",
+        "@aamin/spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/PinConfirm.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/PinConfirm.vue"
+        }
+      ]
+    },
+    {
+      "name": "reason-pin-dialog",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/alert-dialog",
+        "@aamin/button",
+        "@aamin/label",
+        "@aamin/lib-i18n",
+        "@aamin/locale-common",
+        "@aamin/locale-reason-pin",
+        "@aamin/pin-confirm",
+        "@aamin/textarea"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/ReasonPinDialog.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/ReasonPinDialog.vue"
+        }
+      ]
+    },
+    {
+      "name": "searchable-select",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/combobox",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-common",
+        "@aamin/spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/SearchableSelect.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/SearchableSelect.vue"
+        }
+      ]
+    },
+    {
+      "name": "setting-row",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/status-switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/SettingRow.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/SettingRow.vue"
+        }
+      ]
+    },
+    {
+      "name": "sparkline",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-i18n",
+        "@aamin/lib-money",
+        "@aamin/locale-common"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/Sparkline.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/Sparkline.vue"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/card",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-money",
+        "@aamin/locale-common",
+        "@aamin/skeleton",
+        "@aamin/sparkline",
+        "@aamin/tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/StatCard.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/StatCard.vue"
+        }
+      ]
+    },
+    {
+      "name": "status-badge",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/badge",
+        "@aamin/lib-i18n",
+        "@aamin/locale-status"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/StatusBadge.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/StatusBadge.vue"
+        }
+      ]
+    },
+    {
+      "name": "status-switch",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-i18n",
+        "@aamin/lib-utils",
+        "@aamin/locale-common",
+        "@aamin/status-badge",
+        "@aamin/switch"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/StatusSwitch.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/StatusSwitch.vue"
+        }
+      ]
+    },
+    {
+      "name": "sticky-submit-bar",
+      "type": "registry:component",
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/lib-i18n",
+        "@aamin/locale-common",
+        "@aamin/locale-submit-bar",
+        "@aamin/spinner"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/StickySubmitBar.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/StickySubmitBar.vue"
+        }
+      ]
+    },
+    {
+      "name": "time-field",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/button",
+        "@aamin/input",
+        "@aamin/lib-digits",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-utils",
+        "@aamin/locale-common",
+        "@aamin/locale-time-field",
+        "@aamin/popover"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/TimeField.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/TimeField.vue"
+        }
+      ]
+    },
+    {
+      "name": "timeline",
+      "type": "registry:component",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-icons"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/Timeline.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/Timeline.vue"
+        }
+      ]
+    },
+    {
+      "name": "totals-strip",
+      "type": "registry:component",
+      "registryDependencies": [
+        "@aamin/badge",
+        "@aamin/lib-i18n",
+        "@aamin/lib-utils",
+        "@aamin/locale-totals-strip",
+        "@aamin/stat-card"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/TotalsStrip.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/TotalsStrip.vue"
+        }
+      ]
+    },
+    {
+      "name": "chart-theme",
+      "type": "registry:component",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-i18n"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/chart-theme.ts",
+          "type": "registry:component",
+          "target": "~/src/components/app/chart-theme.ts"
+        }
+      ]
+    },
+    {
+      "name": "shell",
+      "type": "registry:component",
+      "title": "App shell",
+      "description": "Dashboard + blank layouts, sidebar, topbar, command menu, theme/locale toggles, 404 page.",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "vue@^3.5.40",
+        "vue-i18n@^11.4.8",
+        "vue-router@^4.6.4"
+      ],
+      "registryDependencies": [
+        "@aamin/badge",
+        "@aamin/breadcrumb",
+        "@aamin/button",
+        "@aamin/command",
+        "@aamin/dropdown-menu",
+        "@aamin/kbd",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-nav",
+        "@aamin/locale-auth",
+        "@aamin/locale-command",
+        "@aamin/locale-language",
+        "@aamin/locale-nav",
+        "@aamin/locale-not-found",
+        "@aamin/locale-shell",
+        "@aamin/locale-sidebar",
+        "@aamin/locale-theme",
+        "@aamin/locale-topbar",
+        "@aamin/scroll-area",
+        "@aamin/sheet",
+        "@aamin/tooltip",
+        "@aamin/use-dir",
+        "@aamin/use-locale",
+        "@aamin/use-theme"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/AppSidebar.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/AppSidebar.vue"
+        },
+        {
+          "path": "src/components/app/AppTopbar.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/AppTopbar.vue"
+        },
+        {
+          "path": "src/components/app/CommandMenu.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/CommandMenu.vue"
+        },
+        {
+          "path": "src/components/app/LocaleToggle.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/LocaleToggle.vue"
+        },
+        {
+          "path": "src/components/app/ThemeToggle.vue",
+          "type": "registry:component",
+          "target": "~/src/components/app/ThemeToggle.vue"
+        },
+        {
+          "path": "src/layouts/BlankLayout.vue",
+          "type": "registry:component",
+          "target": "~/src/layouts/BlankLayout.vue"
+        },
+        {
+          "path": "src/layouts/DashboardLayout.vue",
+          "type": "registry:component",
+          "target": "~/src/layouts/DashboardLayout.vue"
+        },
+        {
+          "path": "src/pages/NotFoundPage.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/NotFoundPage.vue"
+        }
+      ]
+    },
+    {
+      "name": "lib-datetime",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/lib/datetime.ts",
+          "type": "registry:lib",
+          "target": "~/src/lib/datetime.ts"
+        }
+      ]
+    },
+    {
+      "name": "lib-digits",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/lib/digits.ts",
+          "type": "registry:lib",
+          "target": "~/src/lib/digits.ts"
+        }
+      ]
+    },
+    {
+      "name": "lib-i18n",
+      "type": "registry:lib",
+      "dependencies": [
+        "vue-i18n@^11.4.8"
+      ],
+      "files": [
+        {
+          "path": "src/lib/i18n.ts",
+          "type": "registry:lib",
+          "target": "~/src/lib/i18n.ts"
+        }
+      ]
+    },
+    {
+      "name": "lib-icons",
+      "type": "registry:lib",
+      "dependencies": [
+        "@lucide/vue@^1.52.0"
+      ],
+      "files": [
+        {
+          "path": "src/lib/icons.ts",
+          "type": "registry:lib",
+          "target": "~/src/lib/icons.ts"
+        }
+      ]
+    },
+    {
+      "name": "lib-money",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/lib/money.ts",
+          "type": "registry:lib",
+          "target": "~/src/lib/money.ts"
+        }
+      ]
+    },
+    {
+      "name": "lib-nav",
+      "type": "registry:lib",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-icons",
+        "@aamin/locale-nav"
+      ],
+      "files": [
+        {
+          "path": "src/lib/nav.ts",
+          "type": "registry:lib",
+          "target": "~/src/lib/nav.ts"
+        }
+      ]
+    },
+    {
+      "name": "lib-number-words",
+      "type": "registry:lib",
+      "dependencies": [
+        "written-number@^0.11.1"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-money"
+      ],
+      "files": [
+        {
+          "path": "src/lib/number-words.ts",
+          "type": "registry:lib",
+          "target": "~/src/lib/number-words.ts"
+        },
+        {
+          "path": "src/types/written-number.d.ts",
+          "type": "registry:lib",
+          "target": "~/src/types/written-number.d.ts"
+        }
+      ]
+    },
+    {
+      "name": "lib-phone",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/lib/phone.ts",
+          "type": "registry:lib",
+          "target": "~/src/lib/phone.ts"
+        }
+      ]
+    },
+    {
+      "name": "lib-utils",
+      "type": "registry:lib",
+      "dependencies": [
+        "clsx@^2.1.1",
+        "tailwind-merge@^3.6.0"
+      ],
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "~/src/lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-async-job",
+      "type": "registry:composable",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/use-poll"
+      ],
+      "files": [
+        {
+          "path": "src/composables/useAsyncJob.ts",
+          "type": "registry:composable",
+          "target": "~/src/composables/useAsyncJob.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-dir",
+      "type": "registry:composable",
+      "dependencies": [
+        "vue@^3.5.40"
+      ],
+      "files": [
+        {
+          "path": "src/composables/useDir.ts",
+          "type": "registry:composable",
+          "target": "~/src/composables/useDir.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-leave-guard",
+      "type": "registry:composable",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "vue@^3.5.40",
+        "vue-router@^4.6.4"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-i18n",
+        "@aamin/locale-submit-bar"
+      ],
+      "files": [
+        {
+          "path": "src/composables/useLeaveGuard.ts",
+          "type": "registry:composable",
+          "target": "~/src/composables/useLeaveGuard.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-locale",
+      "type": "registry:composable",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "vue@^3.5.40"
+      ],
+      "registryDependencies": [
+        "@aamin/lib-i18n",
+        "@aamin/use-dir"
+      ],
+      "files": [
+        {
+          "path": "src/composables/useLocale.ts",
+          "type": "registry:composable",
+          "target": "~/src/composables/useLocale.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-poll",
+      "type": "registry:composable",
+      "dependencies": [
+        "@vueuse/core@^14.4.0",
+        "vue@^3.5.40"
+      ],
+      "files": [
+        {
+          "path": "src/composables/usePoll.ts",
+          "type": "registry:composable",
+          "target": "~/src/composables/usePoll.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-theme",
+      "type": "registry:composable",
+      "dependencies": [
+        "@vueuse/core@^14.4.0"
+      ],
+      "files": [
+        {
+          "path": "src/composables/useTheme.ts",
+          "type": "registry:composable",
+          "target": "~/src/composables/useTheme.ts"
+        }
+      ]
+    },
+    {
+      "name": "locale-attachments",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/attachments.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/attachments.json"
+        },
+        {
+          "path": "src/locales/en/attachments.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/attachments.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-auth",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/auth.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/auth.json"
+        },
+        {
+          "path": "src/locales/en/auth.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/auth.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-breadcrumb",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/breadcrumb.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/breadcrumb.json"
+        },
+        {
+          "path": "src/locales/en/breadcrumb.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/breadcrumb.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-calendar",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/calendar.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/calendar.json"
+        },
+        {
+          "path": "src/locales/en/calendar.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/calendar.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-chart",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/chart.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/chart.json"
+        },
+        {
+          "path": "src/locales/en/chart.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/chart.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-combobox",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/combobox.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/combobox.json"
+        },
+        {
+          "path": "src/locales/en/combobox.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/combobox.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-command",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/command.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/command.json"
+        },
+        {
+          "path": "src/locales/en/command.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/command.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-common",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/common.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/common.json"
+        },
+        {
+          "path": "src/locales/en/common.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/common.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-copy",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/copy.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/copy.json"
+        },
+        {
+          "path": "src/locales/en/copy.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/copy.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-datatable",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/datatable.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/datatable.json"
+        },
+        {
+          "path": "src/locales/en/datatable.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/datatable.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-daybook",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/daybook.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/daybook.json"
+        },
+        {
+          "path": "src/locales/en/daybook.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/daybook.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-dropzone",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/dropzone.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/dropzone.json"
+        },
+        {
+          "path": "src/locales/en/dropzone.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/dropzone.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-home",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/home.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/home.json"
+        },
+        {
+          "path": "src/locales/en/home.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/home.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-language",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/language.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/language.json"
+        },
+        {
+          "path": "src/locales/en/language.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/language.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-lookups",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/lookups.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/lookups.json"
+        },
+        {
+          "path": "src/locales/en/lookups.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/lookups.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-nav",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/nav.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/nav.json"
+        },
+        {
+          "path": "src/locales/en/nav.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/nav.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-not-found",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/notFound.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/notFound.json"
+        },
+        {
+          "path": "src/locales/en/notFound.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/notFound.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-notifications",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/notifications.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/notifications.json"
+        },
+        {
+          "path": "src/locales/en/notifications.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/notifications.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-number-field",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/numberField.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/numberField.json"
+        },
+        {
+          "path": "src/locales/en/numberField.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/numberField.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-pagination",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/pagination.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/pagination.json"
+        },
+        {
+          "path": "src/locales/en/pagination.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/pagination.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-pin",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/pin.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/pin.json"
+        },
+        {
+          "path": "src/locales/en/pin.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/pin.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-reason-pin",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/reasonPin.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/reasonPin.json"
+        },
+        {
+          "path": "src/locales/en/reasonPin.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/reasonPin.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-shell",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/shell.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/shell.json"
+        },
+        {
+          "path": "src/locales/en/shell.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/shell.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-sidebar",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/sidebar.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/sidebar.json"
+        },
+        {
+          "path": "src/locales/en/sidebar.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/sidebar.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-status",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/status.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/status.json"
+        },
+        {
+          "path": "src/locales/en/status.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/status.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-submit-bar",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/submitBar.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/submitBar.json"
+        },
+        {
+          "path": "src/locales/en/submitBar.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/submitBar.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-theme",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/theme.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/theme.json"
+        },
+        {
+          "path": "src/locales/en/theme.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/theme.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-time-field",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/timeField.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/timeField.json"
+        },
+        {
+          "path": "src/locales/en/timeField.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/timeField.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-topbar",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/topbar.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/topbar.json"
+        },
+        {
+          "path": "src/locales/en/topbar.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/topbar.json"
+        }
+      ]
+    },
+    {
+      "name": "locale-totals-strip",
+      "type": "registry:file",
+      "files": [
+        {
+          "path": "src/locales/ar/totalsStrip.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/totalsStrip.json"
+        },
+        {
+          "path": "src/locales/en/totalsStrip.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/totalsStrip.json"
+        }
+      ]
+    },
+    {
+      "name": "agents-docs",
+      "type": "registry:file",
+      "title": "Agent guide + docs",
+      "description": "AGENTS.md, CLAUDE.md and docs/*.md — the contract agents follow in a kit project.",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "type": "registry:file",
+          "target": "~/AGENTS.md"
+        },
+        {
+          "path": "CLAUDE.md",
+          "type": "registry:file",
+          "target": "~/CLAUDE.md"
+        },
+        {
+          "path": "docs/async.md",
+          "type": "registry:file",
+          "target": "~/docs/async.md"
+        },
+        {
+          "path": "docs/datatable.md",
+          "type": "registry:file",
+          "target": "~/docs/datatable.md"
+        },
+        {
+          "path": "docs/forms.md",
+          "type": "registry:file",
+          "target": "~/docs/forms.md"
+        },
+        {
+          "path": "docs/money-and-status.md",
+          "type": "registry:file",
+          "target": "~/docs/money-and-status.md"
+        },
+        {
+          "path": "docs/new-project.md",
+          "type": "registry:file",
+          "target": "~/docs/new-project.md"
+        },
+        {
+          "path": "docs/pages.md",
+          "type": "registry:file",
+          "target": "~/docs/pages.md"
+        },
+        {
+          "path": "docs/registry.md",
+          "type": "registry:file",
+          "target": "~/docs/registry.md"
+        },
+        {
+          "path": "docs/rtl.md",
+          "type": "registry:file",
+          "target": "~/docs/rtl.md"
+        },
+        {
+          "path": "docs/theming.md",
+          "type": "registry:file",
+          "target": "~/docs/theming.md"
+        }
+      ]
+    },
+    {
+      "name": "reference",
+      "type": "registry:file",
+      "title": "Living reference",
+      "description": "Dev-only demo/recipe pages under /reference/* (components gallery, page templates, tables, forms…).",
+      "dependencies": [
+        "@internationalized/date@^3.12.2",
+        "@tanstack/vue-table@^8.21.3",
+        "@unovis/ts@^1.6.7",
+        "@unovis/vue@^1.6.7",
+        "@vee-validate/zod@^4.15.1",
+        "@vueuse/core@^14.4.0",
+        "vee-validate@^4.15.1",
+        "vue@^3.5.40",
+        "vue-i18n@^11.4.8",
+        "vue-router@^4.6.4",
+        "vue-sonner@^2.0.9",
+        "zod@^3.25.76"
+      ],
+      "registryDependencies": [
+        "@aamin/accordion",
+        "@aamin/alert",
+        "@aamin/alert-dialog",
+        "@aamin/amount",
+        "@aamin/async-confirm-dialog",
+        "@aamin/attachment-viewer",
+        "@aamin/avatar",
+        "@aamin/badge",
+        "@aamin/brand-mark",
+        "@aamin/breadcrumb",
+        "@aamin/button",
+        "@aamin/calendar",
+        "@aamin/card",
+        "@aamin/chart",
+        "@aamin/chart-state",
+        "@aamin/chart-theme",
+        "@aamin/checkbox",
+        "@aamin/collapsible",
+        "@aamin/combobox",
+        "@aamin/command",
+        "@aamin/compact-pager",
+        "@aamin/copy-button",
+        "@aamin/data-table",
+        "@aamin/date-field",
+        "@aamin/daybook-list",
+        "@aamin/dialog",
+        "@aamin/doc-no",
+        "@aamin/dropdown-menu",
+        "@aamin/empty-state",
+        "@aamin/file-dropzone",
+        "@aamin/filter-chips",
+        "@aamin/filter-sheet",
+        "@aamin/form",
+        "@aamin/input",
+        "@aamin/input-group",
+        "@aamin/kbd",
+        "@aamin/label",
+        "@aamin/lib-datetime",
+        "@aamin/lib-icons",
+        "@aamin/lib-money",
+        "@aamin/lib-utils",
+        "@aamin/locale-common",
+        "@aamin/locale-nav",
+        "@aamin/locale-status",
+        "@aamin/lookup-chip-board",
+        "@aamin/money-figure",
+        "@aamin/multi-select",
+        "@aamin/notification-bell",
+        "@aamin/number-field",
+        "@aamin/page-header",
+        "@aamin/pagination",
+        "@aamin/pin-confirm",
+        "@aamin/pin-input",
+        "@aamin/popover",
+        "@aamin/progress",
+        "@aamin/radio-group",
+        "@aamin/range-calendar",
+        "@aamin/reason-pin-dialog",
+        "@aamin/scroll-area",
+        "@aamin/searchable-select",
+        "@aamin/select",
+        "@aamin/separator",
+        "@aamin/setting-row",
+        "@aamin/sheet",
+        "@aamin/shell",
+        "@aamin/skeleton",
+        "@aamin/sparkline",
+        "@aamin/spinner",
+        "@aamin/stat-card",
+        "@aamin/status-badge",
+        "@aamin/status-switch",
+        "@aamin/sticky-submit-bar",
+        "@aamin/switch",
+        "@aamin/table",
+        "@aamin/tabs",
+        "@aamin/tags-input",
+        "@aamin/textarea",
+        "@aamin/time-field",
+        "@aamin/timeline",
+        "@aamin/toggle-group",
+        "@aamin/tooltip",
+        "@aamin/totals-strip",
+        "@aamin/use-async-job",
+        "@aamin/use-dir",
+        "@aamin/use-leave-guard",
+        "@aamin/use-locale",
+        "@aamin/use-theme"
+      ],
+      "files": [
+        {
+          "path": "src/components/app/showcase/ShowcaseSection.vue",
+          "type": "registry:file",
+          "target": "~/src/components/app/showcase/ShowcaseSection.vue"
+        },
+        {
+          "path": "src/locales/ar/anatomy.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/anatomy.json"
+        },
+        {
+          "path": "src/locales/ar/templates.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/templates.json"
+        },
+        {
+          "path": "src/locales/en/anatomy.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/anatomy.json"
+        },
+        {
+          "path": "src/locales/en/templates.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/templates.json"
+        },
+        {
+          "path": "src/pages/reference/ComponentsPage.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/ComponentsPage.vue"
+        },
+        {
+          "path": "src/pages/reference/FormsPage.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/FormsPage.vue"
+        },
+        {
+          "path": "src/pages/reference/LoginPage.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/LoginPage.vue"
+        },
+        {
+          "path": "src/pages/reference/OverviewPage.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/OverviewPage.vue"
+        },
+        {
+          "path": "src/pages/reference/PageAnatomyPage.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/PageAnatomyPage.vue"
+        },
+        {
+          "path": "src/pages/reference/ProfilePage.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/ProfilePage.vue"
+        },
+        {
+          "path": "src/pages/reference/SettingsPage.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/SettingsPage.vue"
+        },
+        {
+          "path": "src/pages/reference/TablesPage.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/TablesPage.vue"
+        },
+        {
+          "path": "src/pages/reference/routes.ts",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/routes.ts"
+        },
+        {
+          "path": "src/pages/reference/templates/DetailPageTemplate.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/templates/DetailPageTemplate.vue"
+        },
+        {
+          "path": "src/pages/reference/templates/ListPageTemplate.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/reference/templates/ListPageTemplate.vue"
+        }
+      ]
+    },
+    {
+      "name": "starter",
+      "type": "registry:base",
+      "title": "Aamin dashboard starter",
+      "description": "The whole kit (everything except the reference pages) + app entry, config and tooling files.",
+      "extends": "none",
+      "config": {
+        "style": "reka-nova",
+        "font": "",
+        "typescript": true,
+        "tailwind": {
+          "config": "",
+          "css": "src/style.css",
+          "baseColor": "neutral",
+          "cssVariables": true,
+          "prefix": ""
+        },
+        "iconLibrary": "lucide",
+        "rtl": false,
+        "pointer": false,
+        "aliases": {
+          "components": "@/components",
+          "utils": "@/lib/utils",
+          "ui": "@/components/ui",
+          "lib": "@/lib",
+          "composables": "@/composables"
+        },
+        "menuColor": "default",
+        "menuAccent": "subtle",
+        "registries": {
+          "@aamin": {
+            "url": "https://raw.githubusercontent.com/ALAMANTECH/aamin-ui/main/registry/r/{name}.json"
+          }
+        }
+      },
+      "dependencies": [
+        "@fontsource-variable/rubik@^5.3.0",
+        "@fontsource/ibm-plex-mono@^5.3.0",
+        "@internationalized/date@^3.12.2",
+        "@lucide/vue@^1.52.0",
+        "@tanstack/vue-table@^8.21.3",
+        "@unovis/ts@^1.6.7",
+        "@unovis/vue@^1.6.7",
+        "@vee-validate/zod@^4.15.1",
+        "@vueuse/core@^14.4.0",
+        "class-variance-authority@^0.7.1",
+        "clsx@^2.1.1",
+        "reka-ui@^2.10.3",
+        "tailwind-merge@^3.6.0",
+        "vee-validate@^4.15.1",
+        "vue@^3.5.40",
+        "vue-i18n@^11.4.8",
+        "vue-router@^4.6.4",
+        "vue-sonner@^2.0.9",
+        "written-number@^0.11.1",
+        "zod@^3.25.76"
+      ],
+      "devDependencies": [
+        "@eslint/js@^10.0.1",
+        "@tailwindcss/vite@^4.3.3",
+        "@types/node@^24.13.3",
+        "@vitejs/plugin-vue@^6.0.7",
+        "@vue/test-utils@^2.4.11",
+        "@vue/tsconfig@^0.9.1",
+        "eslint@^10.7.0",
+        "eslint-config-prettier@^10.1.8",
+        "eslint-plugin-vue@^10.9.2",
+        "eslint-plugin-vuejs-accessibility@^2.5.0",
+        "globals@^17.7.0",
+        "jsdom@^29.1.1",
+        "prettier@^3.9.5",
+        "shadcn-vue@2.7.4",
+        "tailwindcss@^4.3.3",
+        "tw-animate-css@^1.4.0",
+        "typescript@~6.0.2",
+        "typescript-eslint@^8.63.0",
+        "vite@^8.1.1",
+        "vitest@^4.1.10",
+        "vue-eslint-parser@^10.4.1",
+        "vue-tsc@^3.3.5"
+      ],
+      "registryDependencies": [
+        "@aamin/accordion",
+        "@aamin/alert",
+        "@aamin/alert-dialog",
+        "@aamin/avatar",
+        "@aamin/badge",
+        "@aamin/breadcrumb",
+        "@aamin/button",
+        "@aamin/calendar",
+        "@aamin/card",
+        "@aamin/chart",
+        "@aamin/checkbox",
+        "@aamin/collapsible",
+        "@aamin/combobox",
+        "@aamin/command",
+        "@aamin/dialog",
+        "@aamin/dropdown-menu",
+        "@aamin/form",
+        "@aamin/input",
+        "@aamin/input-group",
+        "@aamin/label",
+        "@aamin/native-select",
+        "@aamin/number-field",
+        "@aamin/pagination",
+        "@aamin/pin-input",
+        "@aamin/popover",
+        "@aamin/progress",
+        "@aamin/radio-group",
+        "@aamin/range-calendar",
+        "@aamin/scroll-area",
+        "@aamin/select",
+        "@aamin/separator",
+        "@aamin/sheet",
+        "@aamin/skeleton",
+        "@aamin/sonner",
+        "@aamin/spinner",
+        "@aamin/switch",
+        "@aamin/table",
+        "@aamin/tabs",
+        "@aamin/tags-input",
+        "@aamin/textarea",
+        "@aamin/toggle",
+        "@aamin/toggle-group",
+        "@aamin/tooltip",
+        "@aamin/data-table",
+        "@aamin/notification-bell",
+        "@aamin/amount",
+        "@aamin/async-confirm-dialog",
+        "@aamin/attachment-viewer",
+        "@aamin/brand-mark",
+        "@aamin/chart-state",
+        "@aamin/compact-pager",
+        "@aamin/copy-button",
+        "@aamin/date-field",
+        "@aamin/daybook-list",
+        "@aamin/doc-no",
+        "@aamin/empty-state",
+        "@aamin/file-dropzone",
+        "@aamin/filter-chips",
+        "@aamin/filter-sheet",
+        "@aamin/kbd",
+        "@aamin/lookup-chip-board",
+        "@aamin/money-figure",
+        "@aamin/multi-select",
+        "@aamin/page-header",
+        "@aamin/pin-confirm",
+        "@aamin/reason-pin-dialog",
+        "@aamin/searchable-select",
+        "@aamin/setting-row",
+        "@aamin/sparkline",
+        "@aamin/stat-card",
+        "@aamin/status-badge",
+        "@aamin/status-switch",
+        "@aamin/sticky-submit-bar",
+        "@aamin/time-field",
+        "@aamin/timeline",
+        "@aamin/totals-strip",
+        "@aamin/chart-theme",
+        "@aamin/shell",
+        "@aamin/lib-datetime",
+        "@aamin/lib-digits",
+        "@aamin/lib-i18n",
+        "@aamin/lib-icons",
+        "@aamin/lib-money",
+        "@aamin/lib-nav",
+        "@aamin/lib-number-words",
+        "@aamin/lib-phone",
+        "@aamin/lib-utils",
+        "@aamin/use-async-job",
+        "@aamin/use-dir",
+        "@aamin/use-leave-guard",
+        "@aamin/use-locale",
+        "@aamin/use-poll",
+        "@aamin/use-theme",
+        "@aamin/locale-attachments",
+        "@aamin/locale-auth",
+        "@aamin/locale-breadcrumb",
+        "@aamin/locale-calendar",
+        "@aamin/locale-chart",
+        "@aamin/locale-combobox",
+        "@aamin/locale-command",
+        "@aamin/locale-common",
+        "@aamin/locale-copy",
+        "@aamin/locale-datatable",
+        "@aamin/locale-daybook",
+        "@aamin/locale-dropzone",
+        "@aamin/locale-home",
+        "@aamin/locale-language",
+        "@aamin/locale-lookups",
+        "@aamin/locale-nav",
+        "@aamin/locale-not-found",
+        "@aamin/locale-notifications",
+        "@aamin/locale-number-field",
+        "@aamin/locale-pagination",
+        "@aamin/locale-pin",
+        "@aamin/locale-reason-pin",
+        "@aamin/locale-shell",
+        "@aamin/locale-sidebar",
+        "@aamin/locale-status",
+        "@aamin/locale-submit-bar",
+        "@aamin/locale-theme",
+        "@aamin/locale-time-field",
+        "@aamin/locale-topbar",
+        "@aamin/locale-totals-strip",
+        "@aamin/agents-docs"
+      ],
+      "files": [
+        {
+          "path": ".gitattributes",
+          "type": "registry:file",
+          "target": "~/.gitattributes"
+        },
+        {
+          "path": ".gitignore",
+          "type": "registry:file",
+          "target": "~/.gitignore"
+        },
+        {
+          "path": ".prettierignore",
+          "type": "registry:file",
+          "target": "~/.prettierignore"
+        },
+        {
+          "path": ".prettierrc",
+          "type": "registry:file",
+          "target": "~/.prettierrc"
+        },
+        {
+          "path": "eslint.config.ts",
+          "type": "registry:file",
+          "target": "~/eslint.config.ts"
+        },
+        {
+          "path": "index.html",
+          "type": "registry:file",
+          "target": "~/index.html"
+        },
+        {
+          "path": "public/favicon.svg",
+          "type": "registry:file",
+          "target": "~/public/favicon.svg"
+        },
+        {
+          "path": "src/App.vue",
+          "type": "registry:file",
+          "target": "~/src/App.vue"
+        },
+        {
+          "path": "src/lib/icons.app.ts",
+          "type": "registry:file",
+          "target": "~/src/lib/icons.app.ts"
+        },
+        {
+          "path": "src/lib/locales.app.ts",
+          "type": "registry:file",
+          "target": "~/src/lib/locales.app.ts"
+        },
+        {
+          "path": "src/lib/nav.app.ts",
+          "type": "registry:file",
+          "target": "~/src/lib/nav.app.ts"
+        },
+        {
+          "path": "src/locales/ar/app.json",
+          "type": "registry:file",
+          "target": "~/src/locales/ar/app.json"
+        },
+        {
+          "path": "src/locales/en/app.json",
+          "type": "registry:file",
+          "target": "~/src/locales/en/app.json"
+        },
+        {
+          "path": "src/main.ts",
+          "type": "registry:file",
+          "target": "~/src/main.ts"
+        },
+        {
+          "path": "src/pages/HomePage.vue",
+          "type": "registry:file",
+          "target": "~/src/pages/HomePage.vue"
+        },
+        {
+          "path": "src/router.ts",
+          "type": "registry:file",
+          "target": "~/src/router.ts"
+        },
+        {
+          "path": "src/style.css",
+          "type": "registry:file",
+          "target": "~/src/style.css"
+        },
+        {
+          "path": "tsconfig.app.json",
+          "type": "registry:file",
+          "target": "~/tsconfig.app.json"
+        },
+        {
+          "path": "tsconfig.json",
+          "type": "registry:file",
+          "target": "~/tsconfig.json"
+        },
+        {
+          "path": "tsconfig.node.json",
+          "type": "registry:file",
+          "target": "~/tsconfig.node.json"
+        },
+        {
+          "path": "vite.config.ts",
+          "type": "registry:file",
+          "target": "~/vite.config.ts"
+        },
+        {
+          "path": "vitest.config.ts",
+          "type": "registry:file",
+          "target": "~/vitest.config.ts"
+        }
+      ]
+    }
+  ]
+}

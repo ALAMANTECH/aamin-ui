@@ -1,0 +1,23 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "empty-state",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/button",
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/locale-common",
+    "@aamin/spinner"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/EmptyState.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { Component } from \"vue\";\nimport { InboxIcon, TriangleAlertIcon } from \"@/lib/icons\";\nimport { Spinner } from \"@/components/ui/spinner\";\nimport { Button } from \"@/components/ui/button\";\n// i18n.global (not useI18n) so the unit-tested composite mounts without the plugin.\nimport { i18n } from \"@/lib/i18n\";\n\nwithDefaults(\n  defineProps<{\n    title: string;\n    hint?: string;\n    icon?: Component;\n    /** \"empty\" (default) keeps current behavior; \"loading\"/\"error\" swap the body. */\n    state?: \"empty\" | \"loading\" | \"error\";\n    /** Error-state detail line; falls back to `hint` when omitted. */\n    errorMessage?: string;\n    /** Drop the panel's own dashed frame — for use INSIDE an already-framed\n     *  container (a DataTable sheet, a Card) where a border-in-border reads as\n     *  a floating box. The content stretches to fill instead. */\n    bare?: boolean;\n  }>(),\n  { hint: \"\", icon: undefined, state: \"empty\", errorMessage: undefined, bare: false },\n);\n\nconst emit = defineEmits<{ retry: [] }>();\n\nconst t = i18n.global.t;\n</script>\n\n<template>\n  <div\n    class=\"flex w-full flex-col items-center justify-center px-6 text-center\"\n    :class=\"bare ? 'py-12' : 'rounded-xl border border-dashed bg-grid py-16'\"\n  >\n    <!-- flex-col (not grid place-items-center): when a host stretches this to a\n         tall floor — DataTable's phone empty shell — a grid would spread the\n         icon and text across the full height; flex keeps them one centred group. -->\n    <!-- Loading -->\n    <template v-if=\"state === 'loading'\">\n      <Spinner size=\"lg\" />\n      <p class=\"mt-4 text-sm font-medium text-muted-foreground\">{{ title }}</p>\n    </template>\n\n    <!-- Error -->\n    <template v-else-if=\"state === 'error'\">\n      <span class=\"grid size-11 place-items-center rounded-xl bg-destructive/10 text-destructive\">\n        <TriangleAlertIcon class=\"size-5\" aria-hidden=\"true\" />\n      </span>\n      <p class=\"mt-4 text-sm font-semibold\">{{ title }}</p>\n      <p v-if=\"errorMessage ?? hint\" class=\"mt-1 max-w-sm text-xs text-muted-foreground\">\n        {{ errorMessage ?? hint }}\n      </p>\n      <div class=\"mt-5\">\n        <slot name=\"retry\">\n          <Button variant=\"outline\" size=\"sm\" @click=\"emit('retry')\">{{\n            t(\"common.retry\")\n          }}</Button>\n        </slot>\n      </div>\n    </template>\n\n    <!-- Empty (default) -->\n    <template v-else>\n      <span class=\"grid size-11 place-items-center rounded-xl bg-muted text-muted-foreground\">\n        <component :is=\"icon ?? InboxIcon\" class=\"size-5\" aria-hidden=\"true\" />\n      </span>\n      <p class=\"mt-4 text-sm font-semibold\">{{ title }}</p>\n      <p v-if=\"hint\" class=\"mt-1 max-w-sm text-xs text-muted-foreground\">{{ hint }}</p>\n      <div v-if=\"$slots.default\" class=\"mt-5\">\n        <slot />\n      </div>\n    </template>\n  </div>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/EmptyState.vue"
+    }
+  ],
+  "type": "registry:component"
+}

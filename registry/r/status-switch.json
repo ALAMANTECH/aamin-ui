@@ -1,0 +1,23 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "status-switch",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-i18n",
+    "@aamin/lib-utils",
+    "@aamin/locale-common",
+    "@aamin/status-badge",
+    "@aamin/switch"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/StatusSwitch.vue",
+      "content": "<script setup lang=\"ts\">\nimport { computed } from \"vue\";\nimport type { HTMLAttributes } from \"vue\";\nimport { Switch } from \"@/components/ui/switch\";\nimport StatusBadge from \"@/components/app/StatusBadge.vue\";\nimport { i18n } from \"@/lib/i18n\";\nimport { cn } from \"@/lib/utils\";\n\n/**\n * A record's enabled/disabled toggle WITH its state spelled out — the switch\n * and a StatusBadge as one unit, every breakpoint. A bare switch says \"you\n * can flip this\" but not what it currently is (the thumb side is direction-\n * dependent in RTL); the badge says \"enabled\" / \"disabled\" in words.\n *\n * Use it wherever a table row or page header lets someone enable/disable a\n * record. Form switches inside dialogs (a field among fields) do not need it —\n * the field's label already names it. Controlled: it emits the requested\n * value and shows `modelValue` until the host has stored the change.\n */\nconst props = withDefaults(\n  defineProps<{\n    modelValue: boolean;\n    /** In-flight guard — disables the switch while the request runs. */\n    pending?: boolean;\n    /** Switch size; `sm` for dense table rows. */\n    size?: \"default\" | \"sm\";\n    /** Accessible name for the switch — say what it toggles (\"Enable Demo Bank A\"). */\n    label: string;\n    /** Override the badge words (defaults to common enabled/disabled). */\n    enabledLabel?: string;\n    disabledLabel?: string;\n    /** Badge tone of the off state — `destructive` where off is a block (a locked account). */\n    disabledVariant?: \"secondary\" | \"warning\" | \"destructive\";\n    /** Badge before the switch (default) or after. */\n    badgeSide?: \"start\" | \"end\";\n    class?: HTMLAttributes[\"class\"];\n  }>(),\n  {\n    pending: false,\n    size: \"default\",\n    enabledLabel: undefined,\n    disabledLabel: undefined,\n    disabledVariant: \"secondary\",\n    badgeSide: \"start\",\n    class: undefined,\n  },\n);\n\nconst emit = defineEmits<{ \"update:modelValue\": [value: boolean] }>();\n\nconst t = i18n.global.t;\n\nconst map = computed(() => ({\n  true: { variant: \"success\" as const, label: props.enabledLabel ?? t(\"common.enabled\") },\n  false: { variant: props.disabledVariant, label: props.disabledLabel ?? t(\"common.disabled\") },\n}));\n</script>\n\n<template>\n  <div :class=\"cn('inline-flex items-center gap-2', props.class)\">\n    <!-- Both state labels render invisibly in the same grid cell so the pill\n         always spans the wider word — the switch stays put when the status\n         flips or differs across sibling rows. -->\n    <div class=\"grid\" :class=\"badgeSide === 'end' ? 'order-last' : undefined\">\n      <StatusBadge class=\"invisible col-start-1 row-start-1\" status=\"true\" :map=\"map\" />\n      <StatusBadge class=\"invisible col-start-1 row-start-1\" status=\"false\" :map=\"map\" />\n      <StatusBadge\n        class=\"col-start-1 row-start-1 w-full justify-center\"\n        data-testid=\"status-switch-state\"\n        :status=\"modelValue ? 'true' : 'false'\"\n        :map=\"map\"\n      />\n    </div>\n    <Switch\n      :size=\"size\"\n      :model-value=\"modelValue\"\n      :disabled=\"pending\"\n      :aria-label=\"label\"\n      @update:model-value=\"(v) => emit('update:modelValue', !!v)\"\n    />\n  </div>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/StatusSwitch.vue"
+    }
+  ],
+  "type": "registry:component"
+}

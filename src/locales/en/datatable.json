@@ -1,0 +1,33 @@
+{
+  "datatable": {
+    "columns": "Columns",
+    "columnsHiddenAria": "Columns — {count} hidden",
+    "empty": "No data",
+    "firstPage": "First page",
+    "lastPage": "Last page",
+    "nextPage": "Next page",
+    "pageReadoutAria": "Page {page} of {count} — press to jump to another page",
+    "pageReadoutHint": "Press to type a page number",
+    "prevPage": "Previous page",
+    "rangeOf": "of",
+    "rangeShowing": "Showing",
+    "rowNumber": "#",
+    "rowNumberAria": "Row number",
+    "rowsPerPage": "Rows",
+    "rowsPerPageAria": "Rows per page",
+    "select": "Select",
+    "selectAll": "Select all",
+    "selectAllRows": "Select all rows",
+    "selectPage": "Select this page",
+    "selectRow": "Select row",
+    "selectedRow": "row selected",
+    "selectedRows": "rows selected",
+    "showAllColumns": "Show all columns",
+    "showCards": "Show as cards",
+    "showColumns": "Show columns",
+    "showTable": "Show as table",
+    "sortBy": "Sort",
+    "sortByAria": "Sort the list",
+    "sortByColumn": "Sort by {label}"
+  }
+}

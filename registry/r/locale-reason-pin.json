@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "locale-reason-pin",
+  "files": [
+    {
+      "path": "src/locales/ar/reasonPin.json.txt",
+      "content": "{\n  \"reasonPin\": {\n    \"reasonRequired\": \"اكتب السبب\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/ar/reasonPin.json"
+    },
+    {
+      "path": "src/locales/en/reasonPin.json.txt",
+      "content": "{\n  \"reasonPin\": {\n    \"reasonRequired\": \"Enter a reason\"\n  }\n}\n",
+      "type": "registry:file",
+      "target": "~/src/locales/en/reasonPin.json"
+    }
+  ],
+  "type": "registry:file"
+}

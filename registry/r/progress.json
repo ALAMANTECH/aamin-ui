@@ -1,0 +1,25 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "progress",
+  "dependencies": [
+    "@vueuse/core@^14.4.0",
+    "reka-ui@^2.10.3",
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-utils"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/progress/Progress.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { ProgressRootProps } from \"reka-ui\"\nimport type { HTMLAttributes } from \"vue\"\nimport { computed } from \"vue\"\nimport { reactiveOmit } from \"@vueuse/core\"\nimport {\n  ProgressIndicator,\n  ProgressRoot,\n} from \"reka-ui\"\nimport { cn } from \"@/lib/utils\"\n\nconst props = withDefaults(\n  defineProps<ProgressRootProps & { class?: HTMLAttributes[\"class\"] }>(),\n  {\n    modelValue: 0,\n  },\n)\n\nconst delegatedProps = reactiveOmit(props, \"class\")\n\n/* Explicit null = indeterminate (job running, no % from the backend) */\nconst isIndeterminate = computed(() => props.modelValue === null)\n</script>\n\n<template>\n  <ProgressRoot\n    data-slot=\"progress\"\n    v-bind=\"delegatedProps\"\n    :model-value=\"isIndeterminate ? undefined : (props.modelValue ?? 0)\"\n    :class=\"\n      cn(\n        'bg-muted h-1 rounded-full relative flex w-full items-center overflow-hidden',\n        props.class,\n      )\n    \"\n  >\n    <!-- Direction-aware fill: the track is a flex row, so the indicator packs\n         at the inline-start (right in RTL, left in LTR) and grows by `width`.\n         The previous `translateX(-N%)` was a physical-axis transform that\n         filled end→start in RTL. Indeterminate slides a 40% bar along the\n         logical `inset-inline-start`, so it runs start→end in both dirs. -->\n    <ProgressIndicator\n      data-slot=\"progress-indicator\"\n      :class=\"\n        cn(\n          'bg-primary h-full shrink-0 rounded-full',\n          isIndeterminate ? 'absolute w-2/5 animate-progress-indeterminate' : 'transition-[width]',\n        )\n      \"\n      :style=\"isIndeterminate ? undefined : `width: ${props.modelValue ?? 0}%`\"\n    />\n  </ProgressRoot>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/progress/index.ts",
+      "content": "export { default as Progress } from \"./Progress.vue\"\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

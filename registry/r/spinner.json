@@ -1,0 +1,26 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "spinner",
+  "dependencies": [
+    "vue@^3.5.40"
+  ],
+  "registryDependencies": [
+    "@aamin/lib-i18n",
+    "@aamin/lib-icons",
+    "@aamin/lib-utils",
+    "@aamin/locale-common"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/spinner/Spinner.vue",
+      "content": "<script setup lang=\"ts\">\nimport type { HTMLAttributes } from \"vue\";\nimport { Loader2Icon } from \"@/lib/icons\";\nimport { cn } from \"@/lib/utils\";\nimport { i18n } from \"@/lib/i18n\";\n\nconst t = i18n.global.t;\n\nconst props = withDefaults(\n  defineProps<{\n    /** Icon scale — matches the kit's icon sizing (sm=3.5, default=4, lg=6). */\n    size?: \"sm\" | \"default\" | \"lg\";\n    class?: HTMLAttributes[\"class\"];\n    /** Visually-hidden label announced to screen readers while it spins. */\n    label?: string;\n  }>(),\n  {\n    size: \"default\",\n  },\n);\n\nconst sizeClass = {\n  sm: \"size-3.5\",\n  default: \"size-4\",\n  lg: \"size-6\",\n} satisfies Record<NonNullable<typeof props.size>, string>;\n</script>\n\n<template>\n  <span role=\"status\" class=\"inline-flex items-center\">\n    <Loader2Icon :class=\"cn('animate-spin', sizeClass[size], props.class)\" aria-hidden=\"true\" />\n    <span class=\"sr-only\">{{ label ?? t(\"common.loading\") }}</span>\n  </span>\n</template>\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/spinner/index.ts",
+      "content": "export { default as Spinner } from \"./Spinner.vue\"\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

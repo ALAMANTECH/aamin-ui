@@ -1,0 +1,20 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "sticky-submit-bar",
+  "registryDependencies": [
+    "@aamin/button",
+    "@aamin/lib-i18n",
+    "@aamin/locale-common",
+    "@aamin/locale-submit-bar",
+    "@aamin/spinner"
+  ],
+  "files": [
+    {
+      "path": "src/components/app/StickySubmitBar.vue",
+      "content": "<script setup lang=\"ts\">\nimport { Button } from \"@/components/ui/button\";\nimport { Spinner } from \"@/components/ui/spinner\";\nimport { i18n } from \"@/lib/i18n\";\n\n/**\n * The sticky bar that closes a long intake / batch page: what is ready\n * (`stats` — label + an already formatted value; `#stats` for a figure the\n * host renders itself, e.g. an Amount), `#alert` for a blocking line above\n * them, then cancel and the page's one primary action (it carries the\n * screen's single `glow-primary`). Cancel is a real button emitting `cancel`:\n * `disabled` on an as-child RouterLink does not stop navigation, so a link\n * could silently abort an in-flight request. `disabled` keeps the primary off\n * while nothing on the page can be sent. Pair with `useLeaveGuard(busy)`.\n */\nconst props = withDefaults(\n  defineProps<{\n    stats?: { label: string; value: string }[];\n    busy: boolean;\n    disabled?: boolean;\n    submitLabel: string;\n    /** Primary label while busy. @default t(\"submitBar.busy\") */\n    busyLabel?: string;\n    /** @default t(\"common.cancel\") */\n    cancelLabel?: string;\n    testId?: string;\n    submitTestId?: string;\n  }>(),\n  {\n    stats: () => [],\n    disabled: false,\n    busyLabel: undefined,\n    cancelLabel: undefined,\n    testId: \"sticky-submit-bar\",\n    submitTestId: \"sticky-submit\",\n  },\n);\nconst emit = defineEmits<{ submit: []; cancel: [] }>();\n\nconst t = i18n.global.t;\n</script>\n\n<template>\n  <div\n    class=\"sticky bottom-3 z-10 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 rounded-xl border bg-card px-3 py-2.5 shadow-lg sm:bottom-4 sm:gap-3 sm:px-4 sm:py-3\"\n    :data-testid=\"testId\"\n  >\n    <slot name=\"alert\" />\n    <dl class=\"flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:gap-x-6 sm:text-sm\">\n      <div v-for=\"stat in props.stats\" :key=\"stat.label\" class=\"flex items-center gap-2\">\n        <dt class=\"text-muted-foreground\">{{ stat.label }}</dt>\n        <dd class=\"font-semibold\">\n          <span class=\"num\">{{ stat.value }}</span>\n        </dd>\n      </div>\n      <slot name=\"stats\" />\n    </dl>\n    <div class=\"flex gap-2 max-sm:w-full\">\n      <Button\n        type=\"button\"\n        variant=\"outline\"\n        :disabled=\"busy\"\n        data-testid=\"sticky-cancel\"\n        @click=\"emit('cancel')\"\n      >\n        {{ cancelLabel ?? t(\"common.cancel\") }}\n      </Button>\n      <Button\n        type=\"button\"\n        class=\"glow-primary max-sm:flex-1\"\n        :disabled=\"busy || disabled\"\n        :data-testid=\"submitTestId\"\n        @click=\"emit('submit')\"\n      >\n        <Spinner v-if=\"busy\" size=\"sm\" />\n        {{ busy ? (busyLabel ?? t(\"submitBar.busy\")) : submitLabel }}\n      </Button>\n    </div>\n  </div>\n</template>\n",
+      "type": "registry:component",
+      "target": "~/src/components/app/StickySubmitBar.vue"
+    }
+  ],
+  "type": "registry:component"
+}
